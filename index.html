@@ -1,0 +1,2852 @@
+
+Conversation with Gemini
+BOEING 707 İÇİN CHECKLIST HAZIRLAMANI İSTİYORUM. BU CHECKLIST COLD & DARK MODUNDAN BAŞLAYIP TÜM UÇUŞU İÇERECEK VE COLD & DARK'A KADAR GETİRECEK. BUNU DAHA ÖNCE YAPTIĞIN A321 CHECKLISTINE DAYANARAK, AYNI ARAYÜZÜ KULLANACAĞIN ŞEKİLDE YAP. LİNKİNİ AŞAĞIDA BULABİLİRSİN. AYNI ARAYÜZ, AYNI YÖNTEM İLE A'DAN Z'YE KUSURSUZ BİR CHECKLIST HAZIRLA. İLAVETEN, YAPTIĞINI BANA SUNMADAN ÖNCE LÜTFEN İŞLEMİ DENETLE, HATALARI AYIKLA VE TEKRAR DENETLE. EMİN OLDUĞUNDA BANA KODLAMASINI YAP
+
+Mesajında bahsettiğin A321 checklist linki veya kodu eklenmemiş görünüyor. Aynı arayüzü, tasarımı ve yapıyı birebir koruyarak kodlayabilmem için şunları paylaşabilir misin?
+
+Referans A321 Checklist: Bahsettiğin A321 checklist'in linkini, dosyasını veya kaynak kodunu (HTML/JS/CSS vb.) paylaşabilir misin?
+
+Uçak Varyantı ve Simülatör Detayı: Hazırlayacağımız Boeing 707 checklist'ini belirli bir simülatör eklentisine (örneğin MSFS Famous Flyer 10 / Aeroplane Heaven 707-320C, P3D/FSX Captain Sim 707) göre mi yoksa gerçek dünyadaki standart B707-320B/C (Flight Engineer panel akışları dahil) prosedürlerine göre mi kurgulamamı tercih edersin?
+
+Linki veya kodu paylaştığında, Cold & Dark'tan motor çalıştırma, uçuş aşamaları ve tekrar Cold & Dark'a kadar tüm adımları denetleyip eksiksiz şekilde kodlayacağım.
+
+DAHA ÖNCE A321 İÇİN YAPTIĞIN CHECKLIST AKTARDIĞIM SİTE : https://checklist-a21-n.vercel.app/
+
+
+
+BURADAN KONTROL EDEBİLİRSİN.
+
+
+
+KULLANDIĞIM B707 FAMOUS FLYER FİRMASINA AİT B707. YUKARIDA LİNKTE GÖRDÜĞÜN CHECKLIST GİBİ BİR CHECKLIST HAZIRLA LÜTFEN.
+
+Bir tarayıcı açmadan önce, bunu onayladığınızdan emin olmak istiyorum.
+
+Gemini Spark'ın sizin yerinize web siteleriyle etkileşim kurması için uzak bir tarayıcı kullanmasına izin verilsin mi?
+Görevlerinizi yerine getirmek için Gemini Spark'ın bulutta güvenli bir tarayıcı kullanması gerekecek.
+
+Gemini Spark, beklenmeyen şekilde veri paylaşımı da dahil olmak üzere hata yapabilir. Hassas görevleri denetleyin.
+Riskleri inceleyin ve tarayıcı verilerini Gemini Spark Ayarları'nda yönetin.
+Planı inceleyin:
+
+Open https://checklist-a21-n.vercel.app/ and inspect the entire page thoroughly. Extract and report:
+
+The exact page title, header, subtitle, and layout structure (sidebar, tabs, cards, progress bars, buttons, modals, theme toggle, reset buttons, etc.).
+All CSS styles, color scheme (exact hex/RGB/Tailwind classes used), font families, and visual design details.
+All flight phases/sections and how each checklist item is structured (e.g., item name, expected value/action, location/panel badge, explanation/notes/tooltip, checkbox behavior, sound or animation effects, localStorage keys).
+If possible, inspect the DOM or page source (document.documentElement.outerHTML or main script structure) and return the complete HTML/CSS/JS template structure so it can be replicated 1:1 for another aircraft.
+İzin ver
+
+Bir tarayıcı açmadan önce, bunu onayladığınızdan emin olmak istiyorum.
+
+Gemini Spark'ın sizin yerinize web siteleriyle etkileşim kurması için uzak bir tarayıcı kullanmasına izin verilsin mi?
+Görevlerinizi yerine getirmek için Gemini Spark'ın bulutta güvenli bir tarayıcı kullanması gerekecek.
+
+Gemini Spark, beklenmeyen şekilde veri paylaşımı da dahil olmak üzere hata yapabilir. Hassas görevleri denetleyin.
+Riskleri inceleyin ve tarayıcı verilerini Gemini Spark Ayarları'nda yönetin.
+Planı inceleyin:
+
+On https://checklist-a21-n.vercel.app/, inspect the JavaScript code and DOM structure (for example by viewing the page source or inline <script> / <style> tags in the page). Report:
+
+Whether it is a single HTML file with inline CSS/JS or uses Tailwind/Lucide/etc.
+All buttons, modals (e.g. REHBER modal, FAILURES/QRH modal), footer text, keyboard shortcuts, and Web Audio sound synthesis code.
+Exact CSS variables or classes used on checklist item cards (unchecked, active/SIRADAKİ, checked/completed, and BELOW THE LINE divider).
+
+The ONLY Boeing 707 Guide You Need (MSFS 2024, Real Procedures)
+Joshua757 · 3.6K views
+
+
+The ONLY Boeing 707 Fast Startup Guide You Need (MSFS 2024 + Authentic FCOM)
+Joshua757 · 1.2K views
+
+İzin ver
+
+Paylaştığın A321neo EFB Checklist arayüz mimarisini birebir temel alarak, Microsoft Flight Simulator Famous Flyer 10: Boeing 707-320C (Working Title & iniBuilds geliştirmesi) için Cold & Dark başlangıçtan tüm uçuş safhalarına ve tekrar Cold & Dark kapanışa kadar uzanan tek dosyalık interaktif EFB uygulamasını hazırladım:
+
+HTML icon
+boeing_707_320c_checklist
+ HTML 
+Arayüz ve Fonksiyonel Özellikler (A321neo SOP EFB ile 1:1 Uyum)
+Aynı EFB Görsel Kimliği ve Tema Motoru: Gece (#0B111E / #131B2E) ve Gündüz modları, üst durum çubuğu, faz ilerleme göstergesi, sarı-siyah şeritli BELOW THE LINE ayırıcıları, aktif maddede parlayan SIRADAKİ vurgusu ve hem çevrimiçi (Vercel/tarayıcı) hem çevrimdışı (yerel dosya) kesintisiz çalışan çift katmanlı CSS yapısı korundu.
+
+Klavye ve Kokpit Ses Sentezi (Web Audio API): SPACE veya ENTER tuşuyla sıradaki aktif maddeyi onaylama, faz bittiğinde otomatik olarak bir sonraki faza geçme, doğrulama/tamamlama/ikaz sesleri (playTone) ve localStorage üzerinden otomatik kayıt (b707_checklist_state_v1) eklendi.
+
+B707-320C İstasyon Rozetleri: Her maddede ilgili kontrolün hangi panelde olduğu (FE PANEL, OVERHEAD, PEDESTAL, CAPT / FO, GYROPILOT, CIVA INS / FMS, EFB) renk kodlu rozetlerle belirtildi.
+
+QRH / Abnormal Procedures & Go-Around Modülü: Üst bardaki FAILURES (QRH) butonu altında B707-320C'ye özel 5 kritik acil durum prosedürü (JT3D-3B Engine Fire/Severe Damage, Cabin Altitude / Rapid Depressurization, Generator Trip / Manual Sync Bus Paralleling, Utility/Aux Hydraulic System Loss ve FE Hidden Panel Emergency Fuel Dumping) ile GO-AROUND fazı ve 2. YAKLAŞMAYA BAŞLA sıfırlama döngüsü kurgulandı.
+
+Uçuş Safhaları Özeti (15 Faz • 151 Doğrulama Maddesi)
+Gerçek Boeing 707-320C FCOM / AOM prosedürleri ve MSFS 707-320C sistem mimarisi doğrultusunda hazırlanan fazların dağılımı:
+
+Faz No	Faz Başlığı	Madde Sayısı	Kapsanan Kritik B707-320C & Flight Engineer Kontrolleri
+1	COLD & DARK / POWER UP	13	Chocks, Start Levers CUTOFF, Aux Hyd OFF, Battery (Min 22V / 24V+), Ext Power veya APU Fire Test & Start, Sync Bus (115V/400Hz), Essential Power & APU Bleed
+2	FLIGHT ENGINEER PREP	15	TR 1-2-3 voltaj testi (24.6V-27.8V), Forward/Aft Boost Pump Y-Check valf testi, Fuel Heaters (5 sn), Gizli Fuel Dump paneli, Aux Hyd 1-2 & Interconnect, Outflow valf testi, Wing Isolation Valves OPEN
+3	COCKPIT & OVERHEAD PREP	13	Master Radio, Anti-Skid, Emer Lights ARMED, Window/Probe Heat testi, CIVA INS (STBY → POS WPT 0 → ALIGN) / UNS-1 / GNS 530 kurulumu, Fire/GPWS/Mach Trim/T/O Warning testleri, Gyropilot yer testi, EFB Data Card
+4	BEFORE START	11	INS READY NAV teyidi, Yakıt/Trim/V-Speeds kontrolü; BELOW THE LINE: Kargo ve kabin kapıları, Beacon ON, Aux Hyd ON, Tüm Boost Pompaları ON, Galley & Air Cond Packs OFF
+5	ENGINE START (3-4-2-1)	8	JT3D-3B 3 → 4 → 2 → 1 sırası: Overhead GROUND START → %15 N2 Start Lever START (EGT <625°C) → %40 N2 Starter Release → %50 N2 Start Lever IDLE
+6	AFTER START & FE SYNC	9	Jeneratörlerin (4 → 3 → 2 → 1) 115V / 400Hz senkron ışıkları söndüğünde manuel paralel bağlanması (GCB Close), Essential Power GEN 3, Kalkış için 1 Turbo Compressor ON, Packs & Galley ON, APU OFF, Flaps 14°
+7	TAXI & LINE-UP	12	Servo-tab Aileron/Elevator & Rudder kontrolü, Stab Trim, Yaw Damper ON; BELOW THE LINE: 4 Motor FLIGHT START (Sürekli Ateşleme), Water Injection (ARM/ON), WX Radar & XPDR Mode C, Landing/Strobe Lights ON
+8	TAKEOFF & AFTER T/O	8	Simetrik Takeoff EPR, Positive Rate → Gear UP (ışıklar sönünce OFF/Neutral), Climb EPR & Water Injection OFF, Flaps 0°, Start Switches OFF, Kalan 2 Turbo Compressor ON (10 sn arayla), Basınçlandırma Cruise Alt + 2000 ft
+9	CLIMB & CRUISE	10	10.000 ft Landing Lights RETRACT & TAT Probe Heat ON, Altimetre STD, Gyropilot ALT HOLD & Salmon Bug, Yakıt Transferi (Center Override → Reserve → Main 2-3'ten 1-4'e dengeleme → Tank-to-Engine), Yüksek irtifa TC/Bleed dengesi
+10	DESCENT & APPROACH	10	EFB Landing Data (VREF, GA EPR), FE Landing Elevation, Kaptan tarafı VHF NAV 1 / Course ("Wedding Cake") ayarı; BELOW THE LINE: QNH, <250 KT, HSI RADIO, Tank-to-Engine & Her iki Aux Hyd ON
+11	BEFORE LANDING	9	<220 KT Flaps 14° → LOC yakalama → Gear DOWN (3 Green) & Flaps 25° → GS AUTO / GS MANUAL → 4 Motor FLIGHT START → 2 Turbo Compressor OFF (1 TC kalır) → Pressurization LANDING → Flaps 50° → 30 ft Flare & Manuel 60° Speedbrake
+12	AFTER LANDING	9	Speedbrake DOWN (0°), Reverse STOWED, Landing/Strobe OFF, Flaps UP (0°), Start Switches OFF, WX Radar OFF, XPDR STBY, Probe/Window Heat OFF, Yaw Damper OFF, Kalan TC & Galley OFF, APU START
+13	PARKING & SHUTDOWN	9	Parking Brake SET & Chocks IN PLACE, APU Gen (veya Ext Pwr) ON SYNC BUS (Motor jeneratörleri ayrılır), Essential Power APU, Start Levers (1-2-3-4) CUTOFF, Seat Belts & Beacon OFF, Boost Pumps & Aux Hyd OFF
+14	SECURING (COLD & DARK)	8	CIVA INS / FMS OFF, Master Radio & Flight Recorder OFF, Emer Exit Lights DISARMED, Air Cond Packs & Gasper Fan OFF, APU Bleed OFF → APU Master OFF, Nav/Cockpit Lights OFF, Battery OFF (Tam Cold & Dark)
+15	GO-AROUND (PAS GEÇME)	7	Gyropilot OFF, Go-Around EPR, Pitch 10°-12° & Flaps 25°, Positive Rate → Gear UP → OFF, V2+10 tırmanış, Flaps 14° → 0°, 2. Yaklaşmaya Başla sıfırlama akışı
+Gerçekleştirilen 2 Aşamalı Denetim Raporu
+1. Denetim (Kod, Veri Yapısı ve DOM Doğrulaması): 15 fazdaki 151 kontrol maddesinin benzersiz kimlikleri (id), 41 statik DOM eleman bağlantısı ve JavaScript sözdizimi denetlendi; ilk denetimde tespit edilen uzun açıklama metinlerinin sağdaki beklenen değer kutusuyla yaklaşması (flex-1 eksikliği), QRH modal yüksekliği, localStorage güvenlik istisnası ve iki metin yazım hatası giderildi.
+
+2. Denetim (Headless Chromium & Selenium İnteraktif Simülasyon Testi): Uygulama gerçek tarayıcı motorunda açılarak SPACE tuşuyla faz tamamlama, otomatik sonraki faza geçiş, BELOW THE LINE görünümü, 5 farklı QRH sekmesi, GO-AROUND ve 2. Yaklaşma sıfırlama döngüsü, Gece/Gündüz teması ve ses kontrolleri uçtan uca çalıştırıldı; faz tamamlandığında sayfanın otomatik olarak üst başlığa kayması eklendi ve 0 konsol hatası / 0 uyarı ile doğrulandı.
+
+İndirdiğin boeing_707_320c_checklist.html dosyasını doğrudan tarayıcıda açarak kullanabilir veya adını index.html yapıp Vercel'e yükleyerek tıpkı A321 uygulaman gibi yayınlayabilirsin.
+
+
+
+
+
+Gemini is AI and can make mistakes.
+
+You've allowed Gemini to interact with websites for this thread. Manage permissions in Skills & apps.
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0B111E" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="B707-320C SOP" />
+  <title>Boeing 707-320C SOP • Flight Crew & Flight Engineer Checklist (EFB)</title>
+
+  <!-- Google Fonts & FontAwesome (Non-blocking for instant offline & online EFB load) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'" />
+
+  <!-- Tailwind CSS CDN (Async/Non-blocking + Guarded Config) -->
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'thy-red': '#E30613',
+            'thy-dark': '#0B111E',
+            'thy-nightCard': '#131B2E',
+            'thy-nightBorder': '#1E293B',
+            'efb-cyan': '#06B6D4',
+            'efb-emerald': '#10B981',
+            'efb-amber': '#F59E0B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://cdn.tailwindcss.com" async></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      user-select: none;
+      min-height: 100vh;
+    }
+    /* Native Fallback CSS Engine (Guarantees 1:1 EFB styling both Online & Offline) */
+    body {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    html.dark body {
+      background-color: #0B111E;
+      color: #f1f5f9;
+    }
+    .font-display { font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .hidden { display: none !important; }
+    .flex { display: flex; }
+    .inline-flex { display: inline-flex; }
+    .grid { display: grid; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .flex-1 { flex: 1 1 0%; }
+    .items-center { align-items: center; }
+    .items-start { align-items: flex-start; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .justify-end { justify-content: flex-end; }
+    .shrink-0 { flex-shrink: 0; }
+    .min-w-0 { min-width: 0; }
+    .w-full { width: 100%; }
+    .max-w-7xl { max-width: 80rem; }
+    .max-w-4xl { max-width: 56rem; }
+    .max-w-lg { max-width: 32rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+    .col-span-12 { grid-column: span 12 / span 12; }
+    @media (min-width: 640px) {
+      .sm\:flex { display: flex !important; }
+      .sm\:flex-row { flex-direction: row !important; }
+      .sm\:items-center { align-items: center !important; }
+      .sm\:px-6 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+      .sm\:p-4 { padding: 1rem !important; }
+      .sm\:p-5 { padding: 1.25rem !important; }
+      .sm\:p-6 { padding: 1.5rem !important; }
+      .sm\:gap-4 { gap: 1rem !important; }
+      .sm\:gap-6 { gap: 1.5rem !important; }
+      .sm\:text-base { font-size: 1rem !important; }
+      .sm\:text-xl { font-size: 1.25rem !important; }
+      .sm\:text-sm { font-size: 0.875rem !important; }
+      .sm\:text-xs { font-size: 0.75rem !important; }
+      .sm\:w-40 { width: 10rem !important; }
+      .sm\:text-left { text-align: left !important; }
+    }
+    @media (min-width: 1024px) {
+      .lg\:col-span-4 { grid-column: span 4 / span 4 !important; }
+      .lg\:col-span-8 { grid-column: span 8 / span 8 !important; }
+      .lg\:max-h-\[calc\(100vh-250px\)\] { max-height: calc(100vh - 250px) !important; }
+    }
+    /* Spacing & Sizing */
+    .p-3 { padding: 0.75rem; }
+    .p-3\.5 { padding: 0.875rem; }
+    .p-4 { padding: 1rem; }
+    .p-5 { padding: 1.25rem; }
+    .px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+    .px-1\.5 { padding-left: 0.375rem; padding-right: 0.375rem; }
+    .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .px-2\.5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+    .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+    .px-3\.5 { padding-left: 0.875rem; padding-right: 0.875rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+    .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+    .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+    .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+    .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .pt-0\.5 { padding-top: 0.125rem; }
+    .pt-3 { padding-top: 0.75rem; }
+    .pb-2 { padding-bottom: 0.5rem; }
+    .pb-3 { padding-bottom: 0.75rem; }
+    .pb-6 { padding-bottom: 1.5rem; }
+    .pr-1 { padding-right: 0.25rem; }
+    .mb-3 { margin-bottom: 0.75rem; }
+    .mt-1 { margin-top: 0.25rem; }
+    .mr-1 { margin-right: 0.25rem; }
+    .mr-1\.5 { margin-right: 0.375rem; }
+    .ml-2 { margin-left: 0.5rem; }
+    .my-3 { margin-top: 0.75rem; margin-bottom: 0.75rem; }
+    .gap-1\.5 { gap: 0.375rem; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-2\.5 { gap: 0.625rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .space-x-1 > * + * { margin-left: 0.25rem; }
+    .space-x-1\.5 > * + * { margin-left: 0.375rem; }
+    .space-x-2 > * + * { margin-left: 0.5rem; }
+    .space-x-2\.5 > * + * { margin-left: 0.625rem; }
+    .space-x-3 > * + * { margin-left: 0.75rem; }
+    .space-y-1 > * + * { margin-top: 0.25rem; }
+    .space-y-1\.5 > * + * { margin-top: 0.375rem; }
+    .space-y-2\.5 > * + * { margin-top: 0.625rem; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .w-1\.5 { width: 0.375rem; }
+    .h-1\.5 { height: 0.375rem; }
+    .w-6 { width: 1.5rem; }
+    .h-6 { height: 1.5rem; }
+    .w-7 { width: 1.75rem; }
+    .h-7 { height: 1.75rem; }
+    .w-8 { width: 2rem; }
+    .h-8 { height: 2rem; }
+    .w-9 { width: 2.25rem; }
+    .h-9 { height: 2.25rem; }
+    .w-28 { width: 7rem; }
+    .h-2 { height: 0.5rem; }
+    .h-full { height: 100%; }
+    .rounded { border-radius: 0.25rem; }
+    .rounded-md { border-radius: 0.375rem; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-full { border-radius: 9999px; }
+    .border { border-width: 1px; border-style: solid; }
+    .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+    .border-t { border-top-width: 1px; border-top-style: solid; }
+    .text-\[10px\] { font-size: 10px; line-height: 14px; }
+    .text-\[11px\] { font-size: 11px; line-height: 16px; }
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .font-semibold { font-weight: 600; }
+    .font-bold { font-weight: 700; }
+    .font-extrabold { font-weight: 800; }
+    .font-black { font-weight: 900; }
+    .uppercase { text-transform: uppercase; }
+    .tracking-wide { letter-spacing: 0.025em; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .tracking-tight { letter-spacing: -0.025em; }
+    .leading-relaxed { line-height: 1.625; }
+    .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .line-through { text-decoration: line-through; }
+    .text-right { text-align: right; }
+    .text-left { text-align: left; }
+    .text-center { text-align: center; }
+    .cursor-pointer { cursor: pointer; }
+    .overflow-hidden { overflow: hidden; }
+    .overflow-y-auto { overflow-y: auto; }
+    .sticky { position: sticky; }
+    .fixed { position: fixed; }
+    .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+    .top-0 { top: 0; }
+    .z-30 { z-index: 30; }
+    .z-50 { z-index: 50; }
+    button { cursor: pointer; background: transparent; color: inherit; font-family: inherit; border: none; }
+    /* Theme Surfaces & Colors */
+    header, footer { background-color: #ffffff; border-color: #e2e8f0; }
+    html.dark header, html.dark footer { background-color: #0f172a; border-color: #1E293B; }
+    .bg-white { background-color: #ffffff; }
+    .bg-slate-50 { background-color: #f8fafc; }
+    .bg-slate-100 { background-color: #f1f5f9; }
+    .bg-slate-200 { background-color: #e2e8f0; }
+    html.dark .dark\:bg-thy-nightCard { background-color: #131B2E; }
+    html.dark .dark\:bg-slate-900\/70 { background-color: rgba(15, 23, 42, 0.7); }
+    html.dark .dark\:bg-slate-900\/50 { background-color: rgba(15, 23, 42, 0.5); }
+    html.dark .dark\:bg-slate-900\/60 { background-color: rgba(15, 23, 42, 0.6); }
+    html.dark .dark\:bg-slate-900 { background-color: #0f172a; }
+    html.dark .dark\:bg-slate-800 { background-color: #1e293b; }
+    html.dark .dark\:bg-slate-800\/90 { background-color: rgba(30, 41, 59, 0.9); }
+    html.dark .dark\:bg-slate-800\/80 { background-color: rgba(30, 41, 59, 0.8); }
+    .border-slate-200 { border-color: #e2e8f0; }
+    .border-slate-300 { border-color: #cbd5e1; }
+    html.dark .dark\:border-thy-nightBorder { border-color: #1E293B; }
+    html.dark .dark\:border-slate-800 { border-color: #1e293b; }
+    html.dark .dark\:border-slate-800\/80 { border-color: rgba(30, 41, 59, 0.8); }
+    html.dark .dark\:border-slate-700 { border-color: #334155; }
+    .bg-thy-red { background-color: #E30613; }
+    .bg-thy-red\/10 { background-color: rgba(227, 6, 19, 0.12); }
+    html.dark .dark\:bg-thy-red\/20 { background-color: rgba(227, 6, 19, 0.22); }
+    .border-thy-red { border-color: #E30613; }
+    .text-thy-red { color: #E30613; }
+    .bg-emerald-500 { background-color: #10B981; }
+    .bg-emerald-500\/5 { background-color: rgba(16, 185, 129, 0.06); }
+    .bg-emerald-500\/10 { background-color: rgba(16, 185, 129, 0.12); }
+    .bg-emerald-500\/20 { background-color: rgba(16, 185, 129, 0.2); }
+    html.dark .dark\:bg-emerald-950\/30 { background-color: rgba(2, 44, 34, 0.45); }
+    html.dark .dark\:bg-emerald-950\/15 { background-color: rgba(2, 44, 34, 0.22); }
+    html.dark .dark\:bg-emerald-950\/40 { background-color: rgba(2, 44, 34, 0.55); }
+    .border-emerald-500 { border-color: #10B981; }
+    html.dark .dark\:border-emerald-400 { border-color: #34d399; }
+    .border-emerald-500\/30 { border-color: rgba(16, 185, 129, 0.35); }
+    .border-emerald-500\/40 { border-color: rgba(16, 185, 129, 0.45); }
+    .text-emerald-600 { color: #059669; }
+    html.dark .dark\:text-emerald-400 { color: #34d399; }
+    html.dark .dark\:text-emerald-300 { color: #6ee7b7; }
+    .bg-amber-500 { background-color: #F59E0B; }
+    .bg-amber-500\/5 { background-color: rgba(245, 158, 11, 0.06); }
+    .bg-amber-500\/10 { background-color: rgba(245, 158, 11, 0.12); }
+    .bg-amber-500\/15 { background-color: rgba(245, 158, 11, 0.16); }
+    .bg-amber-500\/20 { background-color: rgba(245, 158, 11, 0.22); }
+    html.dark .dark\:bg-amber-950\/40 { background-color: rgba(69, 26, 3, 0.45); }
+    html.dark .dark\:bg-amber-950\/30 { background-color: rgba(69, 26, 3, 0.38); }
+    .border-amber-500 { border-color: #F59E0B; }
+    .border-amber-500\/20 { border-color: rgba(245, 158, 11, 0.25); }
+    .border-amber-500\/30 { border-color: rgba(245, 158, 11, 0.35); }
+    .border-amber-500\/40 { border-color: rgba(245, 158, 11, 0.45); }
+    .border-amber-500\/60 { border-color: rgba(245, 158, 11, 0.6); }
+    .text-amber-500 { color: #F59E0B; }
+    .text-amber-600 { color: #d97706; }
+    html.dark .dark\:text-amber-400 { color: #fbbf24; }
+    html.dark .dark\:text-amber-300 { color: #fcd34d; }
+    html.dark .dark\:text-amber-200\/90 { color: rgba(253, 230, 138, 0.9); }
+    .bg-red-600 { background-color: #dc2626; }
+    .bg-red-500\/10 { background-color: rgba(239, 68, 68, 0.12); }
+    .bg-red-500\/20 { background-color: rgba(239, 68, 68, 0.2); }
+    .border-red-500\/30 { border-color: rgba(239, 68, 68, 0.35); }
+    .border-red-500\/40 { border-color: rgba(239, 68, 68, 0.45); }
+    .border-red-500\/60 { border-color: rgba(239, 68, 68, 0.6); }
+    .text-red-500 { color: #ef4444; }
+    .text-red-600 { color: #dc2626; }
+    html.dark .dark\:text-red-400 { color: #f87171; }
+    html.dark .dark\:text-red-300 { color: #fca5a5; }
+    .bg-cyan-500\/10 { background-color: rgba(6, 182, 212, 0.12); }
+    .border-cyan-500\/20 { border-color: rgba(6, 182, 212, 0.25); }
+    .border-cyan-500\/30 { border-color: rgba(6, 182, 212, 0.35); }
+    .text-cyan-600 { color: #0891b2; }
+    .text-cyan-700 { color: #0e7490; }
+    html.dark .dark\:text-efb-cyan, html.dark .dark\:text-cyan-300 { color: #22d3ee; }
+    .bg-purple-500\/10 { background-color: rgba(168, 85, 247, 0.12); }
+    .border-purple-500\/30 { border-color: rgba(168, 85, 247, 0.35); }
+    .text-purple-600 { color: #9333ea; }
+    html.dark .dark\:text-purple-300 { color: #d8b4fe; }
+    .bg-indigo-500\/10 { background-color: rgba(99, 102, 241, 0.12); }
+    .border-indigo-500\/50 { border-color: rgba(99, 102, 241, 0.5); }
+    .text-indigo-600 { color: #4f46e5; }
+    html.dark .dark\:text-indigo-400 { color: #818cf8; }
+    .text-white { color: #ffffff; }
+    .text-slate-950 { color: #020617; }
+    .text-slate-900 { color: #0f172a; }
+    .text-slate-700 { color: #334155; }
+    .text-slate-600 { color: #475569; }
+    .text-slate-500 { color: #64748b; }
+    .text-slate-400 { color: #94a3b8; }
+    html.dark .dark\:text-white { color: #ffffff; }
+    html.dark .dark\:text-slate-100 { color: #f1f5f9; }
+    html.dark .dark\:text-slate-200 { color: #e2e8f0; }
+    html.dark .dark\:text-slate-300 { color: #cbd5e1; }
+    html.dark .dark\:text-slate-400 { color: #94a3b8; }
+    html.dark .dark\:text-slate-500 { color: #64748b; }
+    html.dark .dark\:bg-emerald-400 { background-color: #34d399; }
+    html.dark .dark\:text-slate-950 { color: #020617; }
+    .bg-slate-950\/80 { background-color: rgba(2, 6, 23, 0.82); }
+        .max-h-\[90vh\] { max-height: 90vh; }
+    .max-h-\[42vh\] { max-height: 42vh; }
+    .backdrop-blur-sm { backdrop-filter: blur(4px); }
+    .backdrop-blur { backdrop-filter: blur(8px); }
+    .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); }
+    .shadow-md { box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.25); }
+    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.22); }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); }
+    .sm\:pl-2 { padding-left: 0.75rem; }
+    /* FontAwesome Offline Fallback Glyphs (ensures crisp icons even without internet) */
+    .fa-solid { display: inline-block; font-style: normal; font-variant: normal; text-rendering: auto; line-height: 1; }
+    .fa-plane-up::before { content: "✈"; }
+    .fa-rotate-right::before { content: "↻"; }
+    .fa-rotate-left::before { content: "↺"; }
+    .fa-triangle-exclamation::before { content: "⚠"; }
+    .fa-mobile-screen-button::before { content: "📱"; }
+    .fa-tablet-screen-button::before { content: "📟"; }
+    .fa-expand::before { content: "⛶"; }
+    .fa-compress::before { content: "🗗"; }
+    .fa-volume-high::before { content: "🔊"; }
+    .fa-volume-xmark::before { content: "🔇"; }
+    .fa-sun::before { content: "☀"; }
+    .fa-moon::before { content: "☾"; }
+    .fa-circle-info::before { content: "ⓘ"; }
+    .fa-xmark::before { content: "✕"; }
+    .fa-layer-group::before { content: "☰"; }
+    .fa-trash-can::before { content: "🗑"; }
+    .fa-check-double::before { content: "✓✓"; }
+    .fa-check::before { content: "✓"; }
+    .fa-flag-checkered::before { content: "⚑"; }
+    .fa-plane-arrival::before { content: "🛬"; }
+    .fa-arrow-right::before { content: "→"; }
+    .fa-forward-step::before { content: "⏭"; }
+    .fa-grip-lines::before { content: "═"; }
+    .bg-slate-950\/20 { background-color: rgba(2, 6, 23, 0.2); }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.45);
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(148, 163, 184, 0.7);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(16, 185, 129, 0.52);
+      }
+    }
+    .active-item-glow {
+      animation: pulseGlow 2s infinite;
+    }
+
+    @keyframes pulseAmberGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(245, 158, 11, 0.52);
+      }
+    }
+    .active-amber-glow {
+      animation: pulseAmberGlow 2s infinite;
+    }
+
+    .below-line-stripe {
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(245, 158, 11, 0.09),
+        rgba(245, 158, 11, 0.09) 10px,
+        rgba(245, 158, 11, 0.025) 10px,
+        rgba(245, 158, 11, 0.025) 20px
+      );
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 dark:bg-thy-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col justify-between transition-colors duration-200">
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur border-b border-slate-200 dark:border-thy-nightBorder px-3 sm:px-6 py-2.5 shadow-sm">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2.5">
+      <!-- Brand & Aircraft Identification -->
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-full bg-thy-red flex items-center justify-center text-white font-display font-bold text-xs shadow-md shadow-red-600/30 shrink-0">
+          <i class="fa-solid fa-plane-up text-sm"></i>
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <span class="font-display font-bold text-sm sm:text-base tracking-wide text-slate-900 dark:text-white">BOEING 707-320C</span>
+            <span class="bg-thy-red text-white text-[10px] font-mono font-bold px-2 py-0.5 rounded-full tracking-wider uppercase shadow-sm">FAMOUS FLYER 10 SOP</span>
+            <span id="app-mode-badge" class="bg-amber-500/15 text-amber-600 dark:text-amber-400 text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full flex items-center border border-amber-500/30">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400 mr-1.5 animate-pulse"></span>
+              TARAYICI MODU
+            </span>
+          </div>
+          <p class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-mono tracking-tight">
+            FLIGHT CREW &amp; FLIGHT ENGINEER OPERATING MANUAL • JT3D-3B • EFB
+          </p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center flex-wrap gap-1.5 sm:gap-2">
+        <button id="btn-go-around-top" title="Pas Geçme (Go-Around) Fazına Geç" class="border border-amber-500/60 bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-mono font-bold px-2.5 sm:px-3 py-1.5 rounded-lg flex items-center space-x-1.5 transition-all shadow-sm">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>GO-AROUND</span>
+        </button>
+
+        <button id="btn-failures-modal" title="Acil Durum & Arıza Prosedürleri (QRH)" class="border border-red-500/60 bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 text-xs font-mono font-bold px-2.5 sm:px-3 py-1.5 rounded-lg flex items-center space-x-1.5 transition-all shadow-sm">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>FAILURES (QRH)</span>
+        </button>
+
+        <button id="btn-pwa-install" title="Uygulama Kurulum Rehberi" class="border border-indigo-500/50 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-semibold px-2.5 sm:px-3 py-1.5 rounded-lg hidden sm:flex items-center space-x-1.5 transition-all">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <span>CİHAZA YÜKLE</span>
+        </button>
+
+        <button id="btn-fullscreen-toggle" title="Tam Ekran Modu" class="w-8 h-8 rounded-lg border border-slate-300 dark:border-thy-nightBorder bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center text-xs transition-all">
+          <i id="fullscreen-icon" class="fa-solid fa-expand"></i>
+        </button>
+
+        <button id="btn-audio-toggle" title="Kokpit Ses İkazlarını Aç/Kapat" class="w-8 h-8 rounded-lg border border-slate-300 dark:border-thy-nightBorder bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs transition-all">
+          <i id="audio-icon" class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <button id="theme-toggle" title="Gece / Gündüz EFB Görünümü" class="w-8 h-8 rounded-lg border border-slate-300 dark:border-thy-nightBorder bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 flex items-center justify-center text-xs transition-all">
+          <i id="theme-icon" class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUB-HEADER PWA / FULLSCREEN BANNER -->
+  <div id="pwa-banner" class="bg-amber-500/10 dark:bg-amber-950/40 border-b border-amber-500/30 px-3 sm:px-6 py-1.5 text-xs">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 text-amber-800 dark:text-amber-300">
+        <i class="fa-solid fa-circle-info text-amber-500 shrink-0"></i>
+        <span>Tam ekran EFB deneyimi ve Cold &amp; Dark'tan Shutdown'a kesintisiz takip için tam ekranı başlatın veya klavyeden <kbd class="px-1.5 py-0.5 text-[10px] font-mono bg-amber-500/20 rounded border border-amber-500/40 font-bold">SPACE</kbd> tuşunu kullanın.</span>
+      </div>
+      <div class="flex items-center space-x-2 shrink-0">
+        <button id="banner-action-btn" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-mono font-bold text-[10px] px-2.5 py-1 rounded transition-all">
+          REHBER
+        </button>
+        <button id="banner-close-btn" class="text-amber-700 dark:text-amber-400 hover:text-amber-900 dark:hover:text-white px-1">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIVE PHASE STATUS BAR -->
+  <div class="bg-white dark:bg-slate-900/70 border-b border-slate-200 dark:border-thy-nightBorder px-3 sm:px-6 py-2.5">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+      <div class="flex items-center flex-wrap gap-2">
+        <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 dark:text-slate-500">AKTİF LİSTE:</span>
+        <span id="status-bar-phase-name" class="font-display font-bold text-xs sm:text-sm text-slate-900 dark:text-white tracking-wide">1. COLD &amp; DARK / PRELIMINARY PREP</span>
+        <span id="status-bar-sys-badge" class="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full flex items-center">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span>
+          FE &amp; CREW FLOW NORMAL
+        </span>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <div class="text-right">
+          <span id="status-bar-counter" class="text-xs font-mono font-bold text-emerald-600 dark:text-emerald-400">0 / 13 COMPLETED</span>
+          <span id="total-flight-progress" class="text-[10px] font-mono text-slate-400 dark:text-slate-500 ml-2">(TOPLAM: %0)</span>
+        </div>
+        <div class="w-28 sm:w-40 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+          <div id="status-bar-progress" class="h-full bg-emerald-500 transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN TWO-COLUMN EFB WORKSPACE -->
+  <div class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 grid grid-cols-12 gap-4 sm:gap-6 items-start">
+
+    <!-- LEFT SIDEBAR: FLIGHT PHASES -->
+    <aside class="col-span-12 lg:col-span-4 bg-white dark:bg-thy-nightCard border border-slate-200 dark:border-thy-nightBorder rounded-2xl p-3.5 sm:p-4 shadow-sm">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200 dark:border-thy-nightBorder">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-layer-group text-thy-red text-sm"></i>
+          <h2 class="font-display font-bold text-xs sm:text-sm tracking-wider uppercase text-slate-800 dark:text-slate-200">
+            UÇUŞ FAZLARI (COLD &amp; DARK → C&amp;D)
+          </h2>
+        </div>
+        <button id="btn-reset-all" class="text-[11px] font-mono font-semibold text-slate-400 hover:text-red-500 dark:hover:text-red-400 transition-colors flex items-center space-x-1">
+          <i class="fa-solid fa-trash-can text-[10px]"></i>
+          <span>TÜMÜNÜ SIFIRLA</span>
+        </button>
+      </div>
+
+      <!-- Phase List Container -->
+      <div id="phase-sidebar-list" class="space-y-1.5 max-h-[42vh] lg:max-h-[calc(100vh-250px)] overflow-y-auto pr-1">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </aside>
+
+    <!-- RIGHT MAIN CANVAS: ACTIVE CHECKLIST -->
+    <main class="col-span-12 lg:col-span-8 flex flex-col space-y-4">
+
+      <!-- Phase Header Card -->
+      <div id="phase-header-card" class="bg-white dark:bg-thy-nightCard border border-slate-200 dark:border-thy-nightBorder rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="active-phase-badge" class="text-[11px] font-mono font-bold bg-cyan-500/10 text-cyan-600 dark:text-efb-cyan px-2.5 py-0.5 rounded-md border border-cyan-500/20">
+              PHASE 1 / 14
+            </span>
+            <span id="active-phase-crew" class="text-[10px] font-mono font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded">
+              CAPT • FO • FLIGHT ENGINEER
+            </span>
+          </div>
+          <h1 id="active-phase-title" class="font-display font-bold text-lg sm:text-xl text-slate-900 dark:text-white pt-0.5">
+            PRELIMINARY &amp; COLD &amp; DARK CHECKLIST
+          </h1>
+          <p id="active-phase-desc" class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            Uçağa ilk giriş, emniyet anahtarları kontrolü ve Batarya / External Power / APU üzerinden elektrik-pnömatik besleme kurulumu.
+          </p>
+        </div>
+
+        <div class="flex items-center space-x-2 shrink-0">
+          <button id="btn-reset-phase" title="Sadece Bu Fazı Sıfırla" class="border border-slate-300 dark:border-slate-700 hover:border-red-500/50 hover:bg-red-500/10 text-slate-600 dark:text-slate-300 hover:text-red-500 text-xs font-mono font-semibold px-3 py-2.5 rounded-xl transition-all">
+            <i class="fa-solid fa-rotate-left mr-1"></i>SIFIRLA
+          </button>
+
+          <button id="btn-check-active" class="bg-emerald-500 hover:bg-emerald-600 active:scale-[0.99] text-slate-950 font-mono font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl flex items-center space-x-2 transition-all shadow-lg shadow-emerald-500/20">
+            <i class="fa-solid fa-check-double"></i>
+            <span>OK / CHECK</span>
+            <kbd class="bg-slate-950/20 text-slate-950 text-[10px] px-1.5 py-0.5 rounded font-mono">SPACE</kbd>
+          </button>
+        </div>
+      </div>
+
+      <!-- Phase Completion Banner (Shown when all items in current phase are checked) -->
+      <div id="phase-complete-banner" class="hidden bg-emerald-500/10 dark:bg-emerald-950/40 border border-emerald-500/40 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center text-base font-bold shrink-0">
+            <i class="fa-solid fa-flag-checkered"></i>
+          </div>
+          <div>
+            <h3 id="phase-complete-title" class="font-display font-bold text-sm text-emerald-700 dark:text-emerald-300">
+              CHECKLIST COMPLETED!
+            </h3>
+            <p class="text-xs text-emerald-600/90 dark:text-emerald-400/80">
+              Bu safhadaki tüm kontroller doğrulandı. Bir sonraki uçuş safhasına geçebilirsiniz.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2 shrink-0">
+          <button id="btn-proceed-2nd-approach" class="hidden bg-amber-500 hover:bg-amber-600 text-slate-950 font-mono font-bold text-xs px-3.5 py-2 rounded-xl transition-all shadow-md">
+            <i class="fa-solid fa-plane-arrival mr-1.5"></i>2. YAKLAŞMAYA BAŞLA (APPROACH)
+          </button>
+          <button id="btn-next-phase" class="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-mono font-bold text-xs px-4 py-2 rounded-xl flex items-center space-x-1.5 transition-all shadow-md">
+            <span>SONRAKİ FAZ</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Checklist Items List -->
+      <div id="checklist-items-container" class="space-y-2.5 pb-6">
+        <!-- Populated dynamically by JS -->
+      </div>
+
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-thy-nightBorder px-4 sm:px-6 py-3 text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 font-mono text-[11px]">
+        <kbd class="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded border border-slate-300 dark:border-slate-700 font-bold">SPACE</kbd>
+        <span>/</span>
+        <kbd class="px-2 py-0.5 bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 rounded border border-slate-300 dark:border-slate-700 font-bold">ENTER</kbd>
+        <span>: Sıradaki Maddeyi Doğrula (Son maddede sonraki faza geçer)</span>
+      </div>
+      <div class="font-mono text-[11px] text-slate-400 dark:text-slate-500">
+        MSFS Famous Flyer 10 • Boeing 707-320C (JT3D-3B) • Cold &amp; Dark to Cold &amp; Dark SOP
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL 1: FAILURES / QRH (ABNORMAL & EMERGENCY PROCEDURES) -->
+  <div id="failures-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6">
+    <div class="bg-white dark:bg-thy-nightCard border border-red-500/40 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+      <!-- Modal Header -->
+      <div class="bg-red-600/10 dark:bg-red-950/50 border-b border-red-500/30 px-4 sm:px-6 py-3.5 flex items-center justify-between">
+        <div class="flex items-center space-x-2.5">
+          <i class="fa-solid fa-triangle-exclamation text-red-500 text-lg"></i>
+          <div>
+            <h2 class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white tracking-wide">
+              BOEING 707-320C • ABNORMAL &amp; EMERGENCY PROCEDURES (QRH)
+            </h2>
+            <p class="text-[11px] font-mono text-red-600 dark:text-red-300">
+              CAPTAIN / FIRST OFFICER / FLIGHT ENGINEER MEMORY ITEMS &amp; DRILLS
+            </p>
+          </div>
+        </div>
+        <button id="close-failures-btn" class="w-8 h-8 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-red-500 hover:text-white text-slate-600 dark:text-slate-300 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Failure Tabs -->
+      <div id="qrh-tabs" class="px-4 sm:px-6 pt-3 pb-2 border-b border-slate-200 dark:border-thy-nightBorder flex flex-wrap gap-1.5 bg-slate-50 dark:bg-slate-900/50">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Failure Content Body -->
+      <div id="qrh-content" class="p-4 sm:p-6 overflow-y-auto space-y-2.5 flex-1">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-thy-nightBorder px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">
+          FE Paneli &amp; QRH Memory Items tamamlandığında normal kontrol listesine dönün.
+        </span>
+        <button id="btn-resume-normal" class="bg-slate-800 dark:bg-slate-700 hover:bg-emerald-600 text-white font-mono font-bold text-xs px-4 py-2 rounded-xl transition-all">
+          STANDART KONTROL LİSTESİNE DÖN
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: INSTALL / FULLSCREEN GUIDE MODAL -->
+  <div id="install-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-thy-nightCard border border-slate-200 dark:border-thy-nightBorder rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-slate-200 dark:border-thy-nightBorder flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-tablet-screen-button text-efb-cyan"></i>
+          <h3 class="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white">
+            TAM EKRAN EFB &amp; UYGULAMA KULLANIM REHBERİ
+          </h3>
+        </div>
+        <button id="close-modal-btn" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="p-5 space-y-4 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+        <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 space-y-1.5">
+          <div class="font-mono font-bold text-xs text-efb-cyan uppercase">1. Klavye ve Hızlı EFB Kontrolü</div>
+          <p class="text-xs leading-relaxed">
+            Uçuş esnasında <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded font-mono font-bold">SPACE</kbd> veya <kbd class="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded font-mono font-bold">ENTER</kbd> tuşuna basarak sıradaki (<span class="text-emerald-500 font-bold">SIRADAKİ</span>) maddeyi anında onaylayabilirsiniz. İlerleme durumunuz tarayıcı hafızasına (<code class="font-mono">localStorage</code>) otomatik kaydedilir.
+          </p>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 space-y-1.5">
+          <div class="font-mono font-bold text-xs text-amber-500 uppercase">2. iOS (Safari) &amp; Android (Chrome) Tablet EFB</div>
+          <p class="text-xs leading-relaxed">
+            <strong>iOS / iPadOS:</strong> Safari'de <em>Paylaş</em> simgesine dokunun ve <strong>"Ana Ekrana Ekle"</strong> seçeneğini seçin.<br />
+            <strong>Android / Masaüstü Chrome:</strong> Tarayıcı menüsünden <strong>"Uygulamayı Yükle / Ana Ekrana Ekle"</strong> seçeneğini kullanın.
+          </p>
+        </div>
+      </div>
+
+      <div class="px-5 py-3.5 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-thy-nightBorder flex items-center justify-end space-x-2">
+        <button id="btn-modal-force-fullscreen" class="bg-efb-cyan hover:bg-cyan-600 text-slate-950 font-mono font-bold text-xs px-3.5 py-2 rounded-xl transition-all">
+          <i class="fa-solid fa-expand mr-1"></i>Tam Ekran Uygulamayı Başlat
+        </button>
+        <button id="btn-modal-dismiss" class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-mono font-semibold text-xs px-3.5 py-2 rounded-xl transition-all">
+          Anladım / Kapat
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPLICATION SCRIPT -->
+  <script>
+    // =========================================================================
+    // BOEING 707-320C (MSFS FAMOUS FLYER 10) COMPLETE FLIGHT PHASES DATA
+    // =========================================================================
+    const checklistPhases = [
+      {
+        id: 'cold_and_dark',
+        shortTitle: '1. COLD & DARK / POWER UP',
+        title: 'PRELIMINARY & COLD & DARK CHECKLIST',
+        crew: 'CAPT • FO • FLIGHT ENGINEER',
+        sysStatus: 'COLD & DARK → POWER UP',
+        desc: 'Uçağa ilk giriş (Cold & Dark), emniyet anahtarlarının kontrolü ve Batarya, Harici Güç (External Power) veya APU ile elektrik/pnömatik beslemenin kurulması.',
+        items: [
+          {
+            id: 'cd_1',
+            station: 'PEDESTAL',
+            name: 'Parking Brake & Wheel Chocks',
+            expected: 'SET / CHOCKS IN PLACE',
+            note: 'Park freni çekili, EFB Ground Services sayfasından tekerlek takozları (Chocks) takılı.'
+          },
+          {
+            id: 'cd_2',
+            station: 'PEDESTAL',
+            name: 'Thrust Levers & Start Levers (1-2-3-4)',
+            expected: 'IDLE / CUTOFF',
+            note: 'Güç vermeden önce 4 gaz kolu IDLE ve 4 yakıt başlatma kolu en alt CUTOFF çentiklerinde olmalı.'
+          },
+          {
+            id: 'cd_3',
+            station: 'CAPT / FO / PEDESTAL',
+            name: 'Landing Gear Lever, Flaps & Speedbrake',
+            expected: 'DOWN (3 GREEN) / UP (0°) / DOWN',
+            note: 'İniş takımı kolu DOWN konumunda, Flap kolu 0° (UP) ve Spoiler/Speedbrake kolu tamamen ileride (DOWN/0°).'
+          },
+          {
+            id: 'cd_4',
+            station: 'OVERHEAD',
+            name: 'Alternate Flaps, Anti-Ice & Pitot/Probe Heats',
+            expected: 'OFF & GUARDED',
+            note: 'Overhead üzerindeki Emergency/Alternate Flap şalterleri kapalı/korumalı, Nacelle & Wing Anti-Ice ve Probe Heat şalterleri OFF.'
+          },
+          {
+            id: 'cd_5',
+            station: 'FE PANEL',
+            name: 'Hydraulic Auxiliary Pumps (Aux 1 & Aux 2)',
+            expected: 'OFF',
+            note: 'Harici güç veya APU bağlanmadan önce ani hidrolik basınçlanmayı önlemek için FE panelindeki Aux Pump 1 ve 2 OFF olmalıdır.'
+          },
+          {
+            id: 'cd_6',
+            station: 'OVERHEAD',
+            name: 'Passenger Oxygen Switch',
+            expected: 'NORM (GUARDED)',
+            note: 'ON konumuna alırsanız kabin maskeleri düşer; koruma kapağı kapalı ve NORM konumunda olduğunu doğrulayın.'
+          },
+          {
+            id: 'cd_7',
+            station: 'FE PANEL (UPPER)',
+            name: 'Battery Switch & DC Voltmeter Check',
+            expected: 'ON (MIN 22V / IDEAL 24V-28V)',
+            note: 'FE üst elektrik panelinde DC Voltmeter seçicisini BAT konumuna alıp min 22V (ideal 24V+) görün ve Battery Switch\'i ON yapın.'
+          },
+          {
+            id: 'cd_8',
+            station: 'OVERHEAD',
+            name: 'Navigation (Position) Lights',
+            expected: 'ON',
+            note: 'Uçak elektriklendiğini yer ekibine bildirmek için Overhead Position/Nav Lights şalterini ON konumuna alın.'
+          },
+          {
+            id: 'cd_9',
+            station: 'FE PANEL / EFB',
+            name: 'External Power (Eğer Yer Elektriği Varsa)',
+            expected: 'CHECK 115V / 400Hz → ON',
+            note: 'AC Voltmeter seçicisini EXT PWR konumuna alıp 115V ve 400Hz değerini doğrulayın; External Power şalterini ON yapın.'
+          },
+          {
+            id: 'cd_10',
+            station: 'FE PANEL (LOWER)',
+            name: 'APU Fire Test & APU Start (Harici Güç/Hava Yoksa)',
+            expected: 'TEST OK → START → ON (RUN)',
+            note: 'FE sol alt panelde APU Fire Test yapın, APU Master şalterini START konumuna basıp bırakarak ON (RUN) konumuna alın ve devirlenmesini bekleyin.'
+          },
+          {
+            id: 'cd_11',
+            station: 'FE PANEL (UPPER)',
+            name: 'APU Generator & Sync Bus',
+            expected: '115V / 400Hz CHECK → APU GEN ON',
+            note: 'AC seçiciyi APU konumuna alın, 115V / 400Hz stabil olduğunda APU Generator şalterini kapatın (Ampermetre yük bindiğini gösterir, Sync Bus beslenir).'
+          },
+          {
+            id: 'cd_12',
+            station: 'FE PANEL (UPPER)',
+            name: 'Essential Power Selector & Galley Power',
+            expected: 'APU (VEYA EXT PWR) / GALLEY ON',
+            note: 'Essential Power seçicisini aktif kaynağa (APU veya EXT PWR) getirin; Galley Power şalterlerini ON konumuna alın.'
+          },
+          {
+            id: 'cd_13',
+            station: 'FE PANEL (PNEUMATIC)',
+            name: 'APU Bleed Air & Air Conditioning Packs (L & R)',
+            expected: 'APU BLEED ON / L & R PACKS ON',
+            note: 'Pnömatik panelde APU Bleed şalterini açın, manifold basıncını görün ve kabin iklimlendirmesi için sol/sağ Air Conditioning Pack\'leri ON yapın.'
+          }
+        ]
+      },
+      {
+        id: 'fe_panel_prep',
+        shortTitle: '2. FLIGHT ENGINEER PREP',
+        title: 'FLIGHT ENGINEER PANEL PREPARATION',
+        crew: 'FLIGHT ENGINEER (VEYA VFE)',
+        sysStatus: 'FE SYSTEMS CHECK',
+        desc: 'Uçuş Mühendisi (Flight Engineer) istasyonundaki Elektrik, Yakıt (Y-Check Valf testi), Hidrolik, Basınçlandırma ve Pnömatik sistem kontrolleri.',
+        items: [
+          {
+            id: 'fe_1',
+            station: 'FE PANEL (ELEC)',
+            name: 'Transformer Rectifiers (TR 1-2-3 & Ess TR)',
+            expected: '24.6V - 27.8V CHECK → SET ESS TR',
+            note: 'DC Load/Volt seçicisi ile tüm TR\'leri kontrol edin (24.6V - 27.8V aralığında olmalı), ardından seçiciyi ESSENTIAL TR konumunda bırakın.'
+          },
+          {
+            id: 'fe_2',
+            station: 'FE PANEL (ELEC)',
+            name: 'Bus Tie Breakers (BTB 1-2-3-4) & CSD Press Lights',
+            expected: 'BTB CLOSED (LIGHTS OUT) / CSD LOW PRESS ON',
+            note: '4 adet korumalı BTB kapalı (ışıkları sönük), motorlar durduğu için Generator Breaker ve CSD Low Oil Pressure ışıkları yanıyor olmalı.'
+          },
+          {
+            id: 'fe_3',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Tank Shutoff & Crossfeed Valves Test',
+            expected: 'CYCLE OPEN/CLOSE (IN-TRANSIT LIGHTS CHECK)',
+            note: 'Tank Shutoff ve Crossfeed valflerini açıp kapatarak mavi/sarı In-Transit ışıklarının yanıp söndüğünü doğrulayın; manifold basıncı için 1 Crossfeed açık bırakılabilir.'
+          },
+          {
+            id: 'fe_4',
+            station: 'FE PANEL (FUEL)',
+            name: 'Forward Boost Pumps & Y-Check Valve Integrity Test',
+            expected: 'FWD PUMPS ON (AFT LOW PRESS LIGHTS STAY ON)',
+            note: 'Tüm Forward Boost Pump\'ları (ve yakıt varsa Center L Pump\'ı) açın: Aft Boost Pump Low Pressure ışıklarının sönmediğini (geri kaçak olmadığını) doğrulayın.'
+          },
+          {
+            id: 'fe_5',
+            station: 'FE PANEL (FUEL)',
+            name: 'Aft Boost Pumps Test & Normal Set',
+            expected: 'AFT PUMPS CHECK → ALL BOOST PUMPS OFF (UNTIL START)',
+            note: 'Forward pompaları kapatıp Aft Boost Pump\'ları (ve Center R Pump\'ı) açarak aynı testi yapın; ardından motor çalıştırmaya kadar pompaları OFF yapın.'
+          },
+          {
+            id: 'fe_6',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Quantity Gauges, Temp Selector & Fuel Heaters',
+            expected: 'TESTED (HEATERS 5 SEC ON → OFF & GUARDED)',
+            note: 'Fuel Gauge Test butonuna basın, Fuel Temp seçicisini tüm tanklarda gezdirip ENG 1\'de bırakın. 4 Fuel Heater kapağını açıp 5 sn ON yaparak valfleri test edin ve OFF/Guarded yapın.'
+          },
+          {
+            id: 'fe_7',
+            station: 'FE PANEL (FUEL DUMP)',
+            name: 'Fuel Dump Chute & Dump Valves (Hidden Panel)',
+            expected: 'RETRACTED / ALL DUMP VALVES SHUT',
+            note: 'FE alt gizli yakıt boşaltma panelinde Dump Chute RETRACTED ve tüm tank boşaltma valflerinin kapalı olduğunu kontrol edin.'
+          },
+          {
+            id: 'fe_8',
+            station: 'FE PANEL (HYD)',
+            name: 'Hydraulic Aux Pump 1, Aux Pump 2 & Interconnect Test',
+            expected: ' ~3000 PSI / BRAKE & RUDDER PRESS CHECK',
+            note: 'Aux Pump 1 ve 2\'yi sırayla açıp basıncın ~3000 PSI\'a çıktığını ve FO tarafında Brake/Rudder basıncını görün. Interconnect Valve SHUT konumunda bırakılır.'
+          },
+          {
+            id: 'fe_9',
+            station: 'FE PANEL (HYD)',
+            name: 'Engine 2 & 3 Hydraulic Fluid Shutoff Valves',
+            expected: 'OPEN & GUARDED',
+            note: 'Motor 2 ve 3 hidrolik kesme valflerinin açık ve koruma kapaklarının kapalı olduğunu teyit edin.'
+          },
+          {
+            id: 'fe_10',
+            station: 'FE PANEL (ENG)',
+            name: 'Engine Vibration Monitor, Fuel Flow Reset & Oil Qty',
+            expected: 'TESTED / FF RESET TO 0 / OIL QTY CHECKED',
+            note: 'Titreşim monitörünü (Diffuser/Turbine) test edin, Fuel Flow sayaçlarını sıfırlayın ve 4 motorun yağ miktarını kontrol edin.'
+          },
+          {
+            id: 'fe_11',
+            station: 'FE PANEL (PRESS)',
+            name: 'Outflow Valves Manual Check & Pressurization Mode',
+            expected: 'TEST MANUAL TRAVEL → SET AUTO',
+            note: 'Basınçlandırma modunu kısa süre MANUAL yapıp Outflow valflerinin hareketini görün, ardından tekrar AUTO moduna alın.'
+          },
+          {
+            id: 'fe_12',
+            station: 'FE PANEL (PRESS)',
+            name: 'Landing Field Elevation, Baro & Cabin Rate',
+            expected: 'DEP ELEV SET / BARO SET / RATE ~500 FPM DETENT',
+            note: 'Kalkış meydanı irtifasını (geri dönüş ihtimaline karşı veya ilk hedef) ve Baro değerini girin, Cabin Rate düğmesini 500 fpm indeks çentiğine getirin.'
+          },
+          {
+            id: 'fe_13',
+            station: 'FE PANEL (PNEU)',
+            name: 'Turbo Compressors (2-3-4) & Engine Bleed Switches',
+            expected: 'ALL OFF',
+            note: 'Motor çalıştırma öncesi Turbo Compressor 2, 3, 4 kapalı (STOP/OFF) ve Engine Bleed 1, 2, 3, 4 şalterleri OFF olmalıdır.'
+          },
+          {
+            id: 'fe_14',
+            station: 'FE PANEL (PNEU)',
+            name: 'Wing Isolation Valves (L & R) & Ram Air',
+            expected: 'ISOLATION VALVES OPEN / RAM AIR CLOSED',
+            note: 'APU veya Ground Cart havasının motor marş valflerine (Start Valves) ulaşabilmesi için Wing Isolation Valves OPEN olmalıdır.'
+          },
+          {
+            id: 'fe_15',
+            station: 'FE PANEL (PNEU)',
+            name: 'Cabin Temp Controls, Coolant Air & Gasper Fan',
+            expected: 'AUTO / TEMP CONTROL / GASPER FAN ON',
+            note: 'Kabin sıcaklık seçicileri AUTO, ekipman soğutma TEMP CONTROL ve yolcu Gasper Fan ON.'
+          }
+        ]
+      },
+      {
+        id: 'cockpit_overhead_prep',
+        shortTitle: '3. COCKPIT & OVERHEAD PREP',
+        title: 'COCKPIT, OVERHEAD & AVIONICS PREPARATION',
+        crew: 'CAPTAIN • FIRST OFFICER',
+        sysStatus: 'AVIONICS & ALIGNMENT',
+        desc: 'Overhead panel akışı, CIVA INS / UNS-1 FMS / GNS 530 navigasyon kurulumu, ikaz testleri, Gyropilot testi ve EFB performans verileri.',
+        items: [
+          {
+            id: 'ovh_1',
+            station: 'OVERHEAD',
+            name: 'Master Radio Switch',
+            expected: 'ON',
+            note: 'VHF Comm, VOR/ILS alıcıları ve ADF sistemlerinin enerjilenmesi için Master Radio şalterini ON konumuna alın.'
+          },
+          {
+            id: 'ovh_2',
+            station: 'OVERHEAD',
+            name: 'Engine Start Control Switches (1-2-3-4)',
+            expected: 'OFF & GUARDED',
+            note: 'Overhead üzerindeki 4 motor başlatma şalterinin merkez (OFF) konumunda ve kapaklarının kapalı olduğunu doğrulayın.'
+          },
+          {
+            id: 'ovh_3',
+            station: 'OVERHEAD',
+            name: 'Windshield Wipers, Anti-Skid & Flight Control Shutoffs',
+            expected: 'PARK / ANTI-SKID ON & GUARDED / VALVES OPEN',
+            note: 'Silecekler PARK, Anti-Skid şalteri ON ve korumalı, Spoiler/Rudder hidrolik kesme valfleri açık ve korumalı.'
+          },
+          {
+            id: 'ovh_4',
+            station: 'OVERHEAD',
+            name: 'Flight Recorder, CVR Test & Emergency Exit Lights',
+            expected: 'FLT REC ON / CVR TESTED / EMER LIGHTS ARMED',
+            note: 'Flight Recorder ON, CVR 5 sn basılı tutularak test edilir, Emergency Exit Lights ARMED (koruma kapağı kapalı).'
+          },
+          {
+            id: 'ovh_5',
+            station: 'OVERHEAD',
+            name: 'No Smoking & Fasten Seat Belt Signs',
+            expected: 'ON',
+            note: 'Kabin uyarı ışıkları NO SMOKING ve FASTEN SEAT BELTS şalterlerini ON konumuna alın.'
+          },
+          {
+            id: 'ovh_6',
+            station: 'OVERHEAD',
+            name: 'Window Heat & Pitot/Probe Heat Test',
+            expected: 'TEST LOW/HIGH & AMPS → SET WINDOW HEAT LOW',
+            note: 'Window Heat LOW/HIGH testini ve Probe Heat ampermetre akım kontrolünü yapın. Kalkıştan en az 10 dk önce Window Heat LOW açılır, Probe Heat taksi öncesi açılmak üzere OFF bırakılır.'
+          },
+          {
+            id: 'ovh_7',
+            station: 'PEDESTAL / AVIONICS',
+            name: 'Navigation System Setup (CIVA INS / UNS-1 FMS / GNS 530)',
+            expected: 'POS VERIFIED → ALIGN / FPL LOADED',
+            note: 'CIVA INS kullanılıyorsa: MSU şalterini STBY yapın, DATA seçicisini POS (Waypoint 0) konumuna alıp koordinatları INSERT edin ve ALIGN konumuna alın (veya EFB CIVA sekmesinden Fast/Instant Align & Rota aktarımı yapın). UNS-1/GNS 530 ise EFB\'den "Send to Avionics" ile planı yükleyin.'
+          },
+          {
+            id: 'ovh_8',
+            station: 'CENTER PANEL',
+            name: 'Fire Detection Loop, Fire Bell & Wheel Well Test',
+            expected: 'TESTED (RED HANDLES ILLUMINATED & BELL CUTOUT)',
+            note: 'Fire Detector Fault ve Fire Warning Test şalterini basılı tutun; 4 yangın kolunun yandığını ve zilin çaldığını görüp Bell Cutout ile susturun.'
+          },
+          {
+            id: 'ovh_9',
+            station: 'CAPT / FO PANEL',
+            name: 'Mach/Airspeed Warning, GPWS, Mach Trim & Takeoff Warning Test',
+            expected: 'TESTED & CHECKED',
+            note: 'Mach Warning zili, GPWS ("Glide Slope" sesli/ışıklı ikazı), Mach Trim (Disengage ışığı kontrolü -> ON) ve 3 numaralı gaz kolunu ileri iterek Takeoff Warning kornasını test edin.'
+          },
+          {
+            id: 'ovh_10',
+            station: 'CAPT / FO PANEL',
+            name: 'Clock / Chronometer (Kurmalı Saat)',
+            expected: 'WOUND & SET',
+            note: 'MSFS Famous Flyer 707\'de mekanik saat gerçekçi moddaysa kurma kolundan kurulu (Wound) ve UTC saate ayarlı olduğunu kontrol edin.'
+          },
+          {
+            id: 'ovh_11',
+            station: 'PEDESTAL',
+            name: 'Weather Radar (Bendix RDR-1) & Transponder',
+            expected: 'STANDBY / MODE C STBY',
+            note: 'Bendix RDR-1 hava radarını STBY konumuna, Transponder\'ı STBY (Squawk kodu girili, irtifa raporlama aktif pilota ayarlı) konumuna alın.'
+          },
+          {
+            id: 'ovh_12',
+            station: 'PEDESTAL / GYROPILOT',
+            name: 'Yaw Damper, Gyropilot & Flight Director Ground Check',
+            expected: 'TEST HDG/PITCH YOKE TRAVEL → DISENGAGE AP',
+            note: 'Aux Hyd açıkken Yaw Damper ve Autopilot\'u açıp HDG modunda lövye hareketini ve Flight Director komut çubuklarını test edin; ardından Autopilot\'u OFF yapın.'
+          },
+          {
+            id: 'ovh_13',
+            station: 'EFB / INSTRUMENTS',
+            name: 'EFB Performance Data Card (Takeoff Speeds, EPR & Trim)',
+            expected: 'SYNCED & BUGS/TRIM SET (FLAPS 14°)',
+            note: 'EFB Takeoff Data Card sayfasında ağırlık/pist verilerini senkronize edin; V1, VR, V2 hız böceklerini (Bugs), Takeoff EPR böceklerini ve Stabilizer Trim değerini aktarın.'
+          }
+        ]
+      },
+      {
+        id: 'before_start',
+        shortTitle: '4. BEFORE START',
+        title: 'BEFORE START CHECKLIST',
+        crew: 'CAPT • FO • FE',
+        sysStatus: 'READY FOR PUSHBACK & START',
+        desc: 'Kokpit hazırlığının tamamlanması, INS/FMS hizalama teyidi ve pushback / motor çalıştırma izni alındığında uygulanan Below The Line adımları.',
+        items: [
+          {
+            id: 'bs_1',
+            station: 'COCKPIT',
+            name: 'Cockpit & Flight Engineer Panel Preparation',
+            expected: 'COMPLETED',
+            note: 'Kaptan, First Officer ve Flight Engineer ön hazırlık akışları tamamlandı.'
+          },
+          {
+            id: 'bs_2',
+            station: 'EFB / EXTERIOR',
+            name: 'Chocks, Gear Pins & Ground Service Equipment',
+            expected: 'CHECKED / READY FOR PUSH',
+            note: 'Kargo ve yolcu merdivenleri ayrılmaya hazır.'
+          },
+          {
+            id: 'bs_3',
+            station: 'CIVA INS / FMS',
+            name: 'Navigation System Status (INS / UNS-1 / GNS)',
+            expected: 'READY NAV (GREEN) → NAV MODE SET',
+            note: 'CIVA INS Status kodu ≤ 5 ve yeşil READY NAV ışığı yandığında MSU seçicisini NAV konumuna alın; HSI kaynağını (RAD/INS) rotanıza göre seçin.'
+          },
+          {
+            id: 'bs_4',
+            station: 'FE PANEL',
+            name: 'Fuel Quantity & Lateral Balance',
+            expected: 'CHECKED & BALANCED (LBS/KG)',
+            note: 'Toplam yakıt miktarı uçuş planıyla uyumlu, Main 1-2-3-4 tankları dengeli.'
+          },
+          {
+            id: 'bs_5',
+            station: 'CAPT / FO / FE',
+            name: 'Takeoff Data (V1, VR, V2, Takeoff EPR, Stab Trim)',
+            expected: 'SET & CROSSCHECKED',
+            note: 'Hız böcekleri, EPR hedefleri ve Stabilizer Trim (~0.4 - 1.5 Units) her iki pilotta doğrulandı.'
+          },
+          {
+            id: 'bs_6',
+            station: 'CAPT / FO / FE',
+            name: 'Altimeters & Altitude Reminder',
+            expected: 'QNH SET & INITIAL ALTITUDE SET',
+            note: 'Her iki pilot ve FE basınçlandırma altimetresi yerel QNH değerine ayarlı; Altitude Reminder ilk tırmanış irtifasına kurulu.'
+          },
+          {
+            type: 'separator',
+            condition: 'Pushback ve Motor Çalıştırma (Start) İzni Alındığında'
+          },
+          {
+            id: 'bs_7',
+            station: 'EFB / OVERHEAD',
+            name: 'Cargo Door, Cabin Doors & Cockpit Windows',
+            expected: 'CLOSED & LOCKED (WARNING LIGHTS OUT)',
+            note: 'Ana güverte kargo kapısı (Main Deck Cargo Door), yolcu kapıları ve kokpit camları kilitli.'
+          },
+          {
+            id: 'bs_8',
+            station: 'OVERHEAD',
+            name: 'Anti-Collision (Beacon) Light',
+            expected: 'ON',
+            note: 'Motor çalıştırma uyarısı için kırmızı Anti-Collision / Beacon ışığı ON.'
+          },
+          {
+            id: 'bs_9',
+            station: 'FE PANEL (HYD)',
+            name: 'Auxiliary Hydraulic Pumps (Aux 1 & Aux 2)',
+            expected: 'ON (PRESSURE ~3000 PSI)',
+            note: 'Pushback ve fren/direksiyon kontrolü için Aux Hydraulic pompaları ON.'
+          },
+          {
+            id: 'bs_10',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Boost Pumps (Main Tanks & Center if Loaded)',
+            expected: 'ALL ON (LOW PRESS LIGHTS OUT)',
+            note: 'Yakıt bulunan tüm tankların Forward ve Aft Boost Pump şalterlerini ON yapın (Center tankta >6000 lbs varsa Center pompalar da ON).'
+          },
+          {
+            id: 'bs_11',
+            station: 'FE PANEL (PNEU/ELEC)',
+            name: 'Galley Power & Air Conditioning Packs (L & R)',
+            expected: 'OFF (MAX PNEUMATIC DUCT PRESSURE)',
+            note: 'Marş sırasında maksimum pnömatik hava basıncı (~40 PSI) ve düşük elektrik yükü için Galley Power ve her iki Air Cond Pack OFF yapılır.'
+          }
+        ]
+      },
+      {
+        id: 'engine_start',
+        shortTitle: '5. ENGINE START (3-4-2-1)',
+        title: 'ENGINE START CHECKLIST (JT3D-3B: 3 → 4 → 2 → 1)',
+        crew: 'CAPTAIN • FLIGHT ENGINEER',
+        sysStatus: 'STARTING ENGINES 3 - 4 - 2 - 1',
+        desc: 'Pratt & Whitney JT3D-3B standart çalıştırma sırası: 3 → 4 → 2 → 1. Her motorda Overhead Start Switch -> %15 N2 Start Lever START -> %40 N2 Starter Release -> %50 N2 IDLE akışı uygulanır.',
+        items: [
+          {
+            id: 'es_1',
+            station: 'FE PANEL (PNEU)',
+            name: 'Manifold Duct Pressure & Wing Isolation Valves',
+            expected: 'MIN 35-40 PSI / ISOLATION VALVES OPEN',
+            note: 'APU Bleed (veya harici hava) açık ve pnömatik manifold basıncı marş için yeterli.'
+          },
+          {
+            id: 'es_2',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Engine #3 Start Switch → GROUND START',
+            expected: 'VALVE OPEN LIGHT ON / N2 RISING',
+            note: 'Overhead Engine #3 Start şalterini koruma kapağını açıp GROUND START konumuna alın; Start Valve Open ışığını ve N2 dönüşünü izleyin.'
+          },
+          {
+            id: 'es_3',
+            station: 'PEDESTAL (START LEVER #3)',
+            name: 'Engine #3 at 15% N2 → Start Lever to START',
+            expected: 'START DETENT (FF, EGT & OIL PRESS RISING)',
+            note: '%15-20 N2 devrinde 3 numaralı Start Lever\'ı bir üst çentik olan START konumuna alın (ateşleme ve yakıt başlar, EGT max 625°C).'
+          },
+          {
+            id: 'es_4',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Engine #3 at 40% N2 → Starter Cutout & at 50% N2 → IDLE',
+            expected: 'STARTER RELEASE AT 40% / LEVER TO IDLE AT 50% N2',
+            note: '%40 N2\'de marş valfi otomatik ayrılır (Starter Release). %50 N2\'de Start Lever\'ı IDLE çentiğine indirin (ateşleme kesilir, motor rölantide stabilize olur).'
+          },
+          {
+            id: 'es_5',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Engine #4 Start Sequence (GROUND START → 15% START → 50% IDLE)',
+            expected: 'STABILIZED (N1, N2, EGT, OIL PRESS NORMAL)',
+            note: '4 numaralı motor için Ground Start -> %15 N2 Start Lever START -> %40 N2 Starter Cutout -> %50 N2 Start Lever IDLE adımlarını tamamlayın. (Harici hava ile crossbleed yapılıyorsa #3 %80 N2\'ye açılarak başlatılır).'
+          },
+          {
+            id: 'es_6',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Engine #2 Start Sequence (GROUND START → 15% START → 50% IDLE)',
+            expected: 'STABILIZED (HYD UTILITY PRESS RISING)',
+            note: '2 numaralı motoru aynı akışla çalıştırın; #2 ve #3 çalıştığında ana Utility Hidrolik sistem basıncı ~3000 PSI\'da stabilize olur.'
+          },
+          {
+            id: 'es_7',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Engine #1 Start Sequence (GROUND START → 15% START → 50% IDLE)',
+            expected: 'ALL 4 JT3D ENGINES STABILIZED AT IDLE',
+            note: '1 numaralı motoru çalıştırıp %50 N2\'de Start Lever\'ı IDLE konumuna getirin; 4 motorun parametrelerini (N1, N2 ~52-55%, EGT, FF, Oil Press) kontrol edin.'
+          },
+          {
+            id: 'es_8',
+            station: 'OVERHEAD',
+            name: 'Engine Start Control Switches (1-2-3-4)',
+            expected: 'ALL OFF & GUARDED (VALVE LIGHTS OUT)',
+            note: '4 motorun da marş şalterlerinin merkez OFF konumuna döndüğünü, Start Valve Open ışıklarının söndüğünü doğrulayıp koruma kapaklarını kapatın.'
+          }
+        ]
+      },
+      {
+        id: 'after_start',
+        shortTitle: '6. AFTER START & FE SYNC',
+        title: 'AFTER START & GENERATOR PARALLELING CHECKLIST',
+        crew: 'FLIGHT ENGINEER • CAPTAIN • FO',
+        sysStatus: 'GENERATORS ON BUS & SYSTEMS READY',
+        desc: 'Motor çalıştırma sonrası FE jeneratör senkronizasyonu (manuel paralel bağlama), Turbo Compressor kontrolü, APU kapatma ve taksi hazırlığı.',
+        items: [
+          {
+            id: 'as_1',
+            station: 'FE PANEL (ELEC)',
+            name: 'Generators 4 - 3 - 2 - 1 Manual Paralleling (Sync Bus)',
+            expected: 'SYNC LIGHTS OUT (115V / 400Hz) → CLOSE GCB 4, 3, 2, 1',
+            note: 'B707\'de otomatik paralel bağlama yoktur: AC seçiciyi sırayla GEN 4 -> 3 -> 2 -> 1 yapın, frekans düğmesiyle 400Hz ayarlayıp senkron ışıklarının çok yavaşlamasını/sönmesini bekleyin ve ilgili Generator Breaker\'ı (GCB) kapatın (veya VFE üzerinden çalıştırın).'
+          },
+          {
+            id: 'as_2',
+            station: 'FE PANEL (ELEC)',
+            name: 'Essential Power Selector',
+            expected: 'GEN 3',
+            note: 'Uçuş boyunca standart Essential Power kaynağı 3 numaralı jeneratördür (GEN 3 konumuna alın).'
+          },
+          {
+            id: 'as_3',
+            station: 'FE PANEL (PNEU)',
+            name: 'Turbo Compressors (2-3-4) & Engine Bleeds Check',
+            expected: 'TESTED → 1 TURBO COMPRESSOR ON FOR TAKEOFF',
+            note: 'Turbo Compressor 2, 3, 4 ve Engine Bleed valflerini kısa süre kontrol edin. Kalkış için Engine Bleed\'leri OFF bırakın ve yalnızca 1 adet Turbo Compressor\'ü (örn. TC #2 veya #3) ON konumuna alın.'
+          },
+          {
+            id: 'as_4',
+            station: 'FE PANEL (PNEU/ELEC)',
+            name: 'Air Conditioning Packs (L & R) & Galley Power',
+            expected: 'ON',
+            note: 'Turbo Compressor devreye girdikten sonra sol ve sağ Air Conditioning Pack\'leri ve Galley Power şalterlerini tekrar ON yapın.'
+          },
+          {
+            id: 'as_5',
+            station: 'FE PANEL (APU)',
+            name: 'APU Bleed Valve & APU Master Switch',
+            expected: 'OFF',
+            note: 'Jeneratörler ve Turbo Compressor devrede olduğundan APU Bleed şalterini kapatın ve APU Master şalterini OFF konumuna alın.'
+          },
+          {
+            id: 'as_6',
+            station: 'OVERHEAD',
+            name: 'Pitot / Probe Heats & Window Heat',
+            expected: 'ALL PROBE HEATS ON / WINDOW HEAT LOW (OR HIGH)',
+            note: 'Capt, FO ve Aux Pitot/Probe ısıtıcılarını ON yapın (TAT Probe Heat sadece havada açılır). Window Heat LOW (buzlanma varsa HIGH) konumunda.'
+          },
+          {
+            id: 'as_7',
+            station: 'OVERHEAD',
+            name: 'Engine & Wing Anti-Ice',
+            expected: 'AS REQUIRED',
+            note: 'OAT < 10°C ve görünür nem varsa Nacelle (Engine) Anti-Ice ON; aksi halde OFF.'
+          },
+          {
+            id: 'as_8',
+            station: 'PEDESTAL',
+            name: 'Takeoff Flaps Setting',
+            expected: 'FLAPS 14° SET (INBOARD & OUTBOARD CHECKED)',
+            note: 'Flap kolunu 14° kalkış çentiğine alın; orta paneldeki Inboard ve Outboard Flap göstergelerinin 14°\'ye ulaştığını doğrulayın.'
+          },
+          {
+            id: 'as_9',
+            station: 'OVERHEAD / EXTERIOR',
+            name: 'Ground Equipment Clear & Taxi / Wing Lights',
+            expected: 'CLEAR SIGNAL RECEIVED / TAXI & WING LIGHTS ON',
+            note: 'Pushback aracı ayrıldı, yer ekibi el sinyali alındı; Taxi ve Wing aydınlatmaları ON.'
+          }
+        ]
+      },
+      {
+        id: 'taxi_before_takeoff',
+        shortTitle: '7. TAXI & LINE-UP',
+        title: 'TAXI & BEFORE TAKEOFF (LINE-UP) CHECKLIST',
+        crew: 'CAPTAIN • FIRST OFFICER • FE',
+        sysStatus: 'TAXI & LINE-UP CHECKS',
+        desc: 'Taksi esnasında uçuş kumandaları, trim, yaw damper ve kalkış brifingi kontrolleri; pist girişinde (Below the Line) sürekli ateşleme ve su enjeksiyonu hazırlığı.',
+        items: [
+          {
+            id: 'tx_1',
+            station: 'CAPT / FO',
+            name: 'Brakes & Nose Wheel Steering Check',
+            expected: 'CHECKED (PRESSURE NORMAL)',
+            note: 'Taksi başlangıcında fren tepkisini ve burun tekeri yönlendirmesini kontrol edin.'
+          },
+          {
+            id: 'tx_2',
+            station: 'CAPT / FO',
+            name: 'Flight Controls Check (Servo-Tabs & Powered Rudder)',
+            expected: 'FULL & FREE MOVEMENT',
+            note: 'Aileron ve Elevator yerde aerodinamik servo-tab\'ları hareket ettirir; Rudder ise hidrolik desteklidir. Tam ve serbest hareketi doğrulayın.'
+          },
+          {
+            id: 'tx_3',
+            station: 'PEDESTAL',
+            name: 'Stabilizer, Aileron & Rudder Trim',
+            expected: 'TAKEOFF TRIM SET (~0.4 - 1.5 UP) / 0 / 0',
+            note: 'Stabilizer Trim tekerleğinin EFB\'de hesaplanan kalkış değerinde, Aileron ve Rudder trimlerin 0 (Neutral) konumunda olduğunu doğrulayın.'
+          },
+          {
+            id: 'tx_4',
+            station: 'PEDESTAL / CENTER',
+            name: 'Flaps & Speedbrake Lever',
+            expected: '14° SET / SPEEDBRAKE DOWN (0°)',
+            note: 'Inboard/Outboard Flap göstergeleri 14°, Speedbrake kolu tam ileride kilitli.'
+          },
+          {
+            id: 'tx_5',
+            station: 'OVERHEAD / GYROPILOT',
+            name: 'Yaw Damper & Flight Director',
+            expected: 'YAW DAMPER ON / FD HDG OR NAV SET',
+            note: 'Yaw Damper şalteri ON (Engage ışığı sönük/aktif), Flight Director kalkış modu (HDG veya NAV) ayarlı.'
+          },
+          {
+            id: 'tx_6',
+            station: 'CAPT / FO',
+            name: 'Takeoff Briefing & Departure Instruments',
+            expected: 'REVIEWED & CROSSCHECKED',
+            note: 'SID/Kalkış rotası, V1/VR/V2 hızları, motor arıza prosedürü ve HSI/VOR/INS modları teyit edildi.'
+          },
+          {
+            id: 'tx_7',
+            station: 'FE PANEL',
+            name: 'Flight Engineer Pre-Takeoff Panel Scan',
+            expected: '1 TC ON / ALL BOOST PUMPS ON / DOORS CLOSED',
+            note: 'Sadece 1 Turbo Compressor çalışıyor, tüm yakıt boost pompaları açık, tüm kapı/uyarı ışıkları sönük.'
+          },
+          {
+            type: 'separator',
+            condition: 'BELOW THE LINE — Pist Girişi (Line-Up) ve Kalkış İzni Alındığında'
+          },
+          {
+            id: 'tx_8',
+            station: 'OVERHEAD',
+            name: 'Cabin Crew Notification',
+            expected: 'ADVISED FOR TAKEOFF',
+            note: 'Kabin ekibine kalkış ikazı verildi.'
+          },
+          {
+            id: 'tx_9',
+            station: 'OVERHEAD',
+            name: 'Engine Start Switches (1 - 2 - 3 - 4)',
+            expected: 'FLIGHT START (CONTINUOUS IGNITION ON)',
+            note: 'Kalkışta motor sönmesini önlemek için 4 motorun da Overhead Start şalterini FLIGHT START (Sürekli Ateşleme) konumuna alın.'
+          },
+          {
+            id: 'tx_10',
+            station: 'FO PANEL / FE',
+            name: 'Water Injection System (Sıcak / Yüksek İrtifa veya Wet T/O)',
+            expected: 'ARMED / ON (VEYA DRY TAKEOFF İÇİN OFF)',
+            note: 'JT3D-3B ıslak kalkış (Wet Takeoff) yapılacaksa FO tarafındaki Water Injection şalterini ON konumuna alın (kalkışta ekstra itki ve karakteristik siyah duman sağlar).'
+          },
+          {
+            id: 'tx_11',
+            station: 'PEDESTAL',
+            name: 'Weather Radar & Transponder',
+            expected: 'WX RADAR ON / XPDR ON (ALT / MODE C)',
+            note: 'Hava radarını ON ve Transponder\'ı ON / Mode C (Altitude Reporting) konumuna getirin.'
+          },
+          {
+            id: 'tx_12',
+            station: 'OVERHEAD',
+            name: 'Landing Lights, Strobe Lights & Taxi Lights',
+            expected: 'LANDING LIGHTS EXTEND & ON / STROBE ON / TAXI OFF',
+            note: 'Landing Lights EXTEND & ON, Strobe (High Intensity) Lights ON, Taxi & Wing Lights OFF.'
+          }
+        ]
+      },
+      {
+        id: 'takeoff_after_takeoff',
+        shortTitle: '8. TAKEOFF & AFTER T/O',
+        title: 'TAKEOFF & AFTER TAKEOFF CHECKLIST',
+        crew: 'CAPTAIN (PF) • FO (PM) • FE',
+        sysStatus: 'TAKEOFF & INITIAL CLIMB',
+        desc: 'Kalkış koşusu, pozitif tırmanış, iniş takımı ve flapların toplanması, su enjeksiyonunun kapatılması ve kabin basınçlandırma/Turbo Compressor devreye alma akışı.',
+        items: [
+          {
+            id: 'to_1',
+            station: 'PEDESTAL / ENG',
+            name: 'Thrust Levers → Stabilize ~50% N1 / 1.4 EPR → Takeoff EPR',
+            expected: 'TAKEOFF EPR SET & SYMMETRIC (BRAKES RELEASED)',
+            note: 'Motorları önce simetrik devirlendirin, ardından EFB\'de hesaplanan Takeoff EPR değerine ayarlayın (80 KT hız kontrolü, V1 -> VR\'da ~8-10° burun yukarı rotasyon).'
+          },
+          {
+            id: 'to_2',
+            station: 'CENTER PANEL',
+            name: 'Positive Rate of Climb → Landing Gear',
+            expected: 'UP (LIGHTS OUT → OFF / NEUTRAL)',
+            note: 'Pozitif varyo ile Landing Gear kolunu UP konumuna alın; 3 yeşil ve kırmızı geçiş ışıkları tamamen söndüğünde kolu orta OFF (Neutral) konumuna getirin.'
+          },
+          {
+            id: 'to_3',
+            station: 'PEDESTAL / FO PANEL',
+            name: 'Climb Thrust (Climb EPR) & Water Injection Switch',
+            expected: 'MAX CONTINUOUS CLIMB EPR (~1.68) / WATER INJ OFF',
+            note: 'Thrust Reduction irtifasında gaz kollarını Climb EPR değerine çekin ve FO panelindeki Water Injection şalterini OFF yapın.'
+          },
+          {
+            id: 'to_4',
+            station: 'PEDESTAL / CENTER',
+            name: 'Flaps Retraction (V2+10 → 180+ KT)',
+            expected: 'RETRACTED TO 0° (CLEAN)',
+            note: 'Hızlandıkça (160-180+ KT) Flap kolunu 0° (UP) konumuna alın ve Inboard/Outboard göstergelerin sıfırlandığını doğrulayın (250 KT altı tırmanış).'
+          },
+          {
+            id: 'to_5',
+            station: 'OVERHEAD',
+            name: 'Engine Start Switches (1 - 2 - 3 - 4)',
+            expected: 'OFF & GUARDED',
+            note: 'Ağır yağış/türbülans yoksa 4 motorun FLIGHT START şalterini OFF konumuna alıp kapaklarını kapatın.'
+          },
+          {
+            id: 'to_6',
+            station: 'FE PANEL (PNEU)',
+            name: 'Turbo Compressors (#2, #3 & #4)',
+            expected: 'START REMAINING TC (10 SEC INTERVAL) → ALL 3 ON',
+            note: 'Tırmanışta kabin basınçlandırması için kapalı olan diğer iki Turbo Compressor\'ü aralarında 10\'ar saniye bekleyerek devreye alın (3 TC aktif).'
+          },
+          {
+            id: 'to_7',
+            station: 'FE PANEL (PRESS)',
+            name: 'Cabin Pressurization Altitude Selector',
+            expected: 'SET CRUISE ALTITUDE + 2,000 FT',
+            note: 'MSFS B707 kılavuzuna göre kabin basınçlandırma kontrolöründe seyir irtifanızın 2.000 ft üzerini ayarlayın (örn. FL250 uçuş için 27.000 ft seçin) ve diferansiyel basıncı (Max 8.6 PSI) izleyin.'
+          },
+          {
+            id: 'to_8',
+            station: 'GYROPILOT / FD',
+            name: 'Gyropilot (Autopilot) & Navigation Coupling',
+            expected: 'ENGAGED (HDG OR VOR/LOC / INS NAV)',
+            note: 'Gyropilot\'u devreye alın; Kaptan tarafı HSI/NAV seçicisi üzerinden VOR/LOC veya INS/FMS takibini doğrulayın.'
+          }
+        ]
+      },
+      {
+        id: 'climb_cruise',
+        shortTitle: '9. CLIMB & CRUISE',
+        title: 'CLIMB & CRUISE CHECKLIST (FE FUEL & PNEUMATIC FLOW)',
+        crew: 'CAPTAIN • FO • FLIGHT ENGINEER',
+        sysStatus: 'CRUISE & FUEL MANAGEMENT',
+        desc: '10.000 ft ve geçiş irtifası (Transition Altitude) işlemleri, seyir hızı (Salmon Bug), B707 yakıt transfer sıralaması ve yüksek irtifa pnömatik dengelemesi.',
+        items: [
+          {
+            id: 'cr_1',
+            station: 'OVERHEAD',
+            name: 'Passing 10,000 FT: Landing Lights & TAT Probe Heat',
+            expected: 'LANDING LIGHTS RETRACT & OFF / TAT PROBE HEAT ON',
+            note: '10.000 ft üzerinde dış Landing Lights\'ları RETRACT & OFF yapın; Overhead\'deki Temperature (TAT) Probe Heat şalterini ON konumuna alın.'
+          },
+          {
+            id: 'cr_2',
+            station: 'OVERHEAD',
+            name: 'Fasten Seat Belt Signs (Sakin Havada)',
+            expected: 'AS REQUIRED / OFF',
+            note: 'Türbülans yoksa emniyet kemeri ikazlarını kapatabilirsiniz; NO SMOKING açık kalır.'
+          },
+          {
+            id: 'cr_3',
+            station: 'CAPT / FO',
+            name: 'Transition Altitude → Altimeters',
+            expected: 'STD SET (1013 hPa / 29.92 inHg) & CROSSCHECKED',
+            note: 'Geçiş irtifasında Kaptan ve FO altimetrelerini standart basınca (1013.2 hPa / 29.92 inHg) ayarlayın.'
+          },
+          {
+            id: 'cr_4',
+            station: 'GYROPILOT / FD',
+            name: 'Level-Off at Cruise Altitude → ALT HOLD & Salmon Bug',
+            expected: 'AP & FD ALT HOLD ON / SALMON BUG SET (~300 KIAS / M0.80)',
+            note: 'Seyir irtifasına varıldığında hem Gyropilot hem Flight Director\'da ALT HOLD açın; sarı referans hız böceğini (Salmon Bug) seyir hızına getirip ADI Fast/Slow halkasını merkezleyin.'
+          },
+          {
+            id: 'cr_5',
+            station: 'FE PANEL (HYD)',
+            name: 'Auxiliary Hydraulic Pumps (Cruise Config)',
+            expected: '1 AUX PUMP OFF (KEEP 1 AUX PUMP ON)',
+            note: 'Düz uçuşta Auxiliary hidrolik pompalardan birini kapatıp diğerini yedek/aktif bırakabilirsiniz.'
+          },
+          {
+            id: 'cr_6',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Management Step 1: Center Tank Override Transfer',
+            expected: 'CENTER PUMPS ON + CROSSFEEDS OPEN (UNTIL EMPTY)',
+            note: 'Merkez (Center) tankta yakıt varsa: Crossfeed valflerini açıp yüksek basınçlı Center Boost Pump\'larla tüm motorları önce Center tanktan besleyin.'
+          },
+          {
+            id: 'cr_7',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Management Step 2: Reserve & Main Tanks (Tank-to-Engine)',
+            expected: 'RESERVE TRANSFER → MAIN 2 & 3 TO 1 & 4 → TANK-TO-ENGINE',
+            note: 'Reserve tankları Main 1 ve 4\'e boşaltın; Main 2 ve 3 fazlalığını Crossfeed ile 1 ve 4\'le eşitledikten sonra Crossfeed\'leri kapatıp (1 tanesi manifold için açık kalabilir) her motoru kendi ana tankından (Tank-to-Engine) besleyin.'
+          },
+          {
+            id: 'cr_8',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Temperature & Fuel Heaters Monitor',
+            expected: 'CHECK TEMP > 0°C (USE FUEL HEATERS IF ≤ 0°C)',
+            note: 'Yakıt sıcaklığını tüm tanklarda kontrol edin; 0°C\'ye düşerse buzlanmayı önlemek için ilgili Fuel Heater şalterlerini açın.'
+          },
+          {
+            id: 'cr_9',
+            station: 'FE PANEL (PNEU)',
+            name: 'High Altitude Pneumatic & Cabin Differential Check',
+            expected: '2-3 TURBO COMPRESSORS ON (+ ENG BLEED IF > FL320)',
+            note: 'FL150-FL320 arası 2-3 Turbo Compressor yeterlidir; FL320-FL400 üzerinde kabin basıncı düşerse 1 veya 2 Engine Bleed valfini takviye olarak açın.'
+          },
+          {
+            id: 'cr_10',
+            station: 'CIVA INS / FMS',
+            name: 'Waypoint Sequencing & Waypoint Distance/Time Check',
+            expected: 'MONITORED (DME / VOR UPDATE IF CIVA DRIFT)',
+            note: 'CIVA INS\'te DIS/TIME modunda sonraki noktaya mesafe/süreyi izleyin; uzun uçuşlarda VOR/DME ile pozisyon güncellemesi veya Virtual Navigator takibini kontrol edin.'
+          }
+        ]
+      },
+      {
+        id: 'before_descent_approach',
+        shortTitle: '10. DESCENT & APPROACH',
+        title: 'BEFORE DESCENT & APPROACH CHECKLIST',
+        crew: 'CAPTAIN • FIRST OFFICER • FE',
+        sysStatus: 'DESCENT & APPROACH PREP',
+        desc: 'Alçalma başlangıcı (Top of Descent), EFB iniş performansı, kabin basınçlandırma iniş meydanı ayarı, ILS/VOR frekans kurulumu ve 10.000 ft altı kontrolleri.',
+        items: [
+          {
+            id: 'da_1',
+            station: 'EFB / INSTRUMENTS',
+            name: 'EFB Landing Performance Data Card (VREF & Go-Around EPR)',
+            expected: 'SYNCED & VREF / GA EPR BUGS SET (FLAPS 50° OR 40°)',
+            note: 'EFB Landing Data Card üzerinden iniş ağırlığı ve pist durumunu senkronize edin; VREF hız böceğini ve Go-Around EPR (~1.79) böceklerini aktarın.'
+          },
+          {
+            id: 'da_2',
+            station: 'FE PANEL (PRESS)',
+            name: 'Pressurization Landing Field Elevation & Baro Correction',
+            expected: 'DEST FIELD ELEVATION & DEST QNH SET',
+            note: 'Alçalmaya başlamadan önce FE basınçlandırma paneline iniş meydanı irtifasını (Landing Elevation) ve varış meydanı barometrik basıncını girin.'
+          },
+          {
+            id: 'da_3',
+            station: 'PEDESTAL / CAPT PANEL',
+            name: 'VHF NAV 1 & 2 Radios & ILS/VOR Course ("Wedding Cake" Selector)',
+            expected: 'TUNED ON CAPTAIN SIDE & COURSE SET',
+            note: 'ÖNEMLİ: B707 Gyropilot yalnızca Kaptan (Sol) tarafındaki VHF NAV 1 alıcısını ve Course değerini dinler! ILS/VOR frekansını ve pist başı Course değerini Kaptan tarafında mutlaka ayarlayın.'
+          },
+          {
+            id: 'da_4',
+            station: 'CAPT / FO',
+            name: 'Approach Briefing & Minimums (DA / MDA)',
+            expected: 'COMPLETED & RADIO ALTIMETER BUG SET',
+            note: 'Yaklaşma kartı, pas geçme irtifası ve karar irtifası (DA/MDA) brifingi tamamlandı.'
+          },
+          {
+            id: 'da_5',
+            station: 'OVERHEAD',
+            name: 'Fasten Seat Belt Signs',
+            expected: 'ON',
+            note: 'Alçalma başlangıcında FASTEN SEAT BELTS ışıklarının ON olduğunu doğrulayın.'
+          },
+          {
+            id: 'da_6',
+            station: 'GYROPILOT / PEDESTAL',
+            name: 'Top of Descent: ALT HOLD Off & Throttle Reduction',
+            expected: 'DESCENT INITIATED (KEEP THRUST ABOVE GEAR HORN)',
+            note: 'ALT HOLD modunu kapatıp alçalmayı başlatın; gaz kollarını tam rölantiye çekerseniz iniş takımı ikaz kornası çalacağından kornanın hemen üstünde veya Speedbrake yardımıyla alçalın.'
+          },
+          {
+            type: 'separator',
+            condition: 'BELOW THE LINE — Geçiş Seviyesi (Transition Level) ve 10.000 FT Altı'
+          },
+          {
+            id: 'da_7',
+            station: 'CAPT / FO',
+            name: 'Altimeters (Transition Level)',
+            expected: 'LOCAL QNH SET & CROSSCHECKED',
+            note: 'Geçiş seviyesinin altında altimetreleri varış meydanı QNH değerine ayarlayın.'
+          },
+          {
+            id: 'da_8',
+            station: 'OVERHEAD / CAPT',
+            name: 'Below 10,000 FT: Speed ≤ 250 KIAS, Landing Lights & TAT Heat',
+            expected: '≤ 250 KT / LANDING LIGHTS EXTEND & ON / TAT HEAT OFF',
+            note: '10.000 ft altında hızı 250 KT altına düşürün (Speedbrake kapatıp takat ayarlayın), Landing Lights EXTEND & ON yapın.'
+          },
+          {
+            id: 'da_9',
+            station: 'CAPT / FO PANEL',
+            name: 'HSI Source Switch (NAV / RAD / INS)',
+            expected: 'SET TO RADIO (FOR ILS / VOR APPROACH)',
+            note: 'ILS veya VOR yaklaşması için her iki pilottaki HSI kaynak seçicisini INS/FMS konumundan RADIO konumuna alın.'
+          },
+          {
+            id: 'da_10',
+            station: 'FE PANEL (FUEL/HYD)',
+            name: 'Fuel Tank-to-Engine Config & Both Aux Hyd Pumps',
+            expected: 'BOOST PUMPS ON / CROSSFEEDS CLOSED / AUX PUMPS ON',
+            note: 'İniş için her motor kendi ana tankından beslenmeli (Crossfeed kapalı, tüm Main Boost pompaları ON) ve her iki Aux Hydraulic pompa ON olmalıdır.'
+          }
+        ]
+      },
+      {
+        id: 'landing',
+        shortTitle: '11. BEFORE LANDING',
+        title: 'BEFORE LANDING & FINAL APPROACH CHECKLIST',
+        crew: 'CAPTAIN (PF) • FO (PM) • FE',
+        sysStatus: 'FINAL APPROACH & LANDING',
+        desc: 'Localizer ve Glide Slope yakalama, iniş takımları, sürekli ateşleme, FE Turbo Compressor/Basınçlandırma iniş modu ve Flaps 50° son yaklaşma kontrolleri.',
+        items: [
+          {
+            id: 'ld_1',
+            station: 'PEDESTAL',
+            name: 'Initial Approach Speed (< 220 KIAS) → Flaps 14°',
+            expected: 'FLAPS 14° SET',
+            note: '220 KT altında ilk kademe olan Flaps 14° açılır.'
+          },
+          {
+            id: 'ld_2',
+            station: 'GYROPILOT / FD',
+            name: 'Localizer Intercept → Gyropilot & FD Mode',
+            expected: 'VOR/LOC ENGAGED (LOCALIZER CAPTURED)',
+            note: 'Localizer hattına yaklaşırken Gyropilot ve Flight Director modunu VOR/LOC konumuna alın.'
+          },
+          {
+            id: 'ld_3',
+            station: 'CENTER PANEL / PEDESTAL',
+            name: 'Glide Slope Alive (< 195 KIAS) → Landing Gear & Flaps 25°',
+            expected: 'GEAR DOWN (3 GREEN) / FLAPS 25° SET',
+            note: 'İniş takımlarını DOWN konumuna alın (3 yeşil ışık yanmalı, kırmızı ışıklar sönük) ve hızı düşürerek Flaps 25° seçin.'
+          },
+          {
+            id: 'ld_4',
+            station: 'GYROPILOT / FD',
+            name: 'Glide Slope Capture → GS AUTO (veya GS MANUAL)',
+            expected: 'GS AUTO (BELOW G/S) OR GS MANUAL (FROM ABOVE)',
+            note: 'Glide Slope alttan yakalanıyorsa GS AUTO, üstten yakalanıyorsa daha agresif alçalan GS MANUAL modunu seçin.'
+          },
+          {
+            id: 'ld_5',
+            station: 'OVERHEAD',
+            name: 'Engine Start Switches (1 - 2 - 3 - 4)',
+            expected: 'FLIGHT START (CONTINUOUS IGNITION ON)',
+            note: 'İniş ve olası pas geçme (Go-Around) için 4 motorun da ateşleme şalterini FLIGHT START konumuna alın.'
+          },
+          {
+            id: 'ld_6',
+            station: 'FE PANEL (PNEU)',
+            name: 'Turbo Compressors (Shut Down 2 Units)',
+            expected: '2 TC OFF (ONLY 1 TURBO COMPRESSOR REMAINS ON)',
+            note: 'İniş ve pas geçme esnasında motorlardan çekilen yükü azaltmak için 2 adet Turbo Compressor\'ü kapatın, sadece 1 tanesi açık kalsın.'
+          },
+          {
+            id: 'ld_7',
+            station: 'FE PANEL (PRESS)',
+            name: 'Cabin Pressurization Selector (6-8 Min Before Landing)',
+            expected: 'SET TO LANDING (ZERO DIFF PRESSURE CHECK)',
+            note: 'İnişten 6-8 dk önce kabin irtifasının meydan irtifasına eşitlendiğini (0 PSI fark) doğrulayıp seçiciyi LANDING konumuna alın.'
+          },
+          {
+            id: 'ld_8',
+            station: 'PEDESTAL / CENTER',
+            name: 'Final Landing Flaps (40° veya 50° Full)',
+            expected: 'FLAPS 50° (OR 40°) SET & GREEN',
+            note: 'Son yaklaşmada tam iniş flaplarını (standart Flaps 50°) açın ve VREF + 5 KT hızını koruyun.'
+          },
+          {
+            id: 'ld_9',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Anti-Skid & Manual Speedbrake Readiness',
+            expected: 'ANTI-SKID ON / MANUAL SPEEDBRAKE READY FOR TOUCHDOWN',
+            note: 'DİKKAT: B707\'de Otomatik Spoiler (Armed) yoktur! ~500 ft\'te Autopilot\'u ayırın, 30 ft\'te Flare yapın, teker koyar koymaz Speedbrake kolunu manuel 60°\'ye çekip Reverse Thrust uygulayın.'
+          }
+        ]
+      },
+      {
+        id: 'after_landing',
+        shortTitle: '12. AFTER LANDING',
+        title: 'AFTER LANDING CHECKLIST (RUNWAY VACATED)',
+        crew: 'CAPTAIN • FIRST OFFICER • FE',
+        sysStatus: 'POST-LANDING CLEANUP & APU START',
+        desc: 'Pist terk edildikten sonra spoiler, flap, aydınlatma, radar/transponder, ısıtıcılar ve park yerine giderken APU başlatma işlemleri.',
+        items: [
+          {
+            id: 'al_1',
+            station: 'PEDESTAL',
+            name: 'Speedbrake Lever & Reverse Thrust',
+            expected: 'DOWN (0°) / REVERSE STOWED',
+            note: 'Spoiler kolunu tam ileri (DOWN/0°) iterek kapatın, Reverser ışıklarının söndüğünü doğrulayın.'
+          },
+          {
+            id: 'al_2',
+            station: 'OVERHEAD',
+            name: 'Landing Lights, Strobe & Taxi / Turnoff Lights',
+            expected: 'LANDING LIGHTS RETRACT & OFF / STROBE OFF / TAXI ON',
+            note: 'Landing Lights RETRACT ve OFF, Strobe OFF, Runway Turnoff ve Taxi/Wing ışıkları ON.'
+          },
+          {
+            id: 'al_3',
+            station: 'PEDESTAL',
+            name: 'Flaps',
+            expected: 'UP (0° RETRACTED)',
+            note: 'Flap kolunu 0° (UP) konumuna alın ve Inboard/Outboard göstergelerin kapandığını izleyin.'
+          },
+          {
+            id: 'al_4',
+            station: 'OVERHEAD',
+            name: 'Engine Start Switches (1 - 2 - 3 - 4)',
+            expected: 'OFF & GUARDED',
+            note: '4 motorun FLIGHT START şalterlerini OFF konumuna getirip kapaklarını kapatın.'
+          },
+          {
+            id: 'al_5',
+            station: 'PEDESTAL',
+            name: 'Weather Radar & Transponder',
+            expected: 'WX RADAR OFF / TRANSPONDER STBY',
+            note: 'Bendix hava radarını OFF, Transponder\'ı STANDBY konumuna alın.'
+          },
+          {
+            id: 'al_6',
+            station: 'OVERHEAD',
+            name: 'Pitot / Probe Heats, Window Heat & Anti-Ice',
+            expected: 'OFF',
+            note: 'Tüm Pitot/Probe ısıtıcılarını, Window Heat şalterlerini ve açıksa Anti-Ice sistemlerini OFF yapın.'
+          },
+          {
+            id: 'al_7',
+            station: 'OVERHEAD / PEDESTAL',
+            name: 'Yaw Damper & Stabilizer Trim',
+            expected: 'YAW DAMPER OFF / TRIM RESET',
+            note: 'Yaw Damper şalterini OFF konumuna alın.'
+          },
+          {
+            id: 'al_8',
+            station: 'FE PANEL (PNEU/ELEC)',
+            name: 'Remaining Turbo Compressor & Galley Power',
+            expected: 'TURBO COMPRESSOR OFF (STOP) / GALLEY POWER OFF',
+            note: 'Kalan son Turbo Compressor\'ü kapatın (STOP) ve Galley Power şalterlerini OFF yapın.'
+          },
+          {
+            id: 'al_9',
+            station: 'FE PANEL (APU)',
+            name: 'APU Start (Eğer Park Yerinde Harici Güç Yoksa)',
+            expected: 'START → ON (RUN) & MONITOR SPOOL UP',
+            note: 'Motorları durdurmadan önce elektrik kesintisi yaşamamak için APU\'yu çalıştırın.'
+          }
+        ]
+      },
+      {
+        id: 'parking_shutdown',
+        shortTitle: '13. PARKING & SHUTDOWN',
+        title: 'PARKING & ENGINE SHUTDOWN CHECKLIST',
+        crew: 'CAPTAIN • FO • FLIGHT ENGINEER',
+        sysStatus: 'ENGINE SHUTDOWN AT GATE',
+        desc: 'Park pozisyonunda park freni ve takozların konulması, elektrik yükünün APU/External Power\'a aktarılması ve 4 JT3D motorunun durdurulması.',
+        items: [
+          {
+            id: 'pk_1',
+            station: 'PEDESTAL / EFB',
+            name: 'Parking Brake & Wheel Chocks',
+            expected: 'PARKING BRAKE SET / CHOCKS IN PLACE',
+            note: 'Park frenini çekin, fren basıncını doğrulayın ve EFB üzerinden tekerlek takozlarını yerleştirin.'
+          },
+          {
+            id: 'pk_2',
+            station: 'OVERHEAD',
+            name: 'Taxi, Wing & Runway Turnoff Lights',
+            expected: 'OFF',
+            note: 'Uçak tamamen durduğunda tüm taksi ve dönüş farlarını kapatın.'
+          },
+          {
+            id: 'pk_3',
+            station: 'FE PANEL (ELEC)',
+            name: 'APU Generator (veya External Power) → ON SYNC BUS',
+            expected: '115V / 400Hz CHECKED → APU GEN (OR EXT PWR) ON',
+            note: 'APU Gen (veya External Power) şalterini ON yapın; bu işlem 4 motor jeneratörünü Sync Bus üzerinden otomatik olarak ayırır (Trip).'
+          },
+          {
+            id: 'pk_4',
+            station: 'FE PANEL (ELEC/PNEU)',
+            name: 'Essential Power Selector & APU Bleed',
+            expected: 'SET TO APU (OR EXT PWR) / APU BLEED ON',
+            note: 'Essential Power seçicisini GEN 3\'ten APU (veya EXT PWR) konumuna alın; kabin iklimlendirmesi devam edecekse APU Bleed ON yapın.'
+          },
+          {
+            id: 'pk_5',
+            station: 'PEDESTAL',
+            name: 'Thrust Levers & Engine Start Levers (1 - 2 - 3 - 4)',
+            expected: 'THRUST IDLE → ALL 4 START LEVERS TO CUTOFF',
+            note: 'Motorlar rölantide soğuduktan sonra 1, 2, 3 ve 4 numaralı Start Lever kollarını en alt CUTOFF çentiğine çekerek motorları durdurun.'
+          },
+          {
+            id: 'pk_6',
+            station: 'OVERHEAD',
+            name: 'Fasten Seat Belt Signs & Doors',
+            expected: 'SEAT BELTS OFF / DOORS CLEAR TO OPEN',
+            note: 'Kemer ikaz ışıklarını kapatın; yolcu ve kargo kapıları açılabilir.'
+          },
+          {
+            id: 'pk_7',
+            station: 'OVERHEAD',
+            name: 'Anti-Collision (Beacon) Light',
+            expected: 'OFF (AFTER N2 BELOW 20%)',
+            note: '4 motorun N2 devri tamamen düştüğünde kırmızı Anti-Collision / Beacon ışığını OFF yapın.'
+          },
+          {
+            id: 'pk_8',
+            station: 'FE PANEL (FUEL)',
+            name: 'Fuel Boost Pumps (All Tanks) & Crossfeed Valves',
+            expected: 'ALL BOOST PUMPS OFF / CROSSFEEDS CLOSED',
+            note: 'Tüm Forward, Aft ve Center yakıt boost pompalarını OFF yapın, Crossfeed valflerini kapatın.'
+          },
+          {
+            id: 'pk_9',
+            station: 'FE PANEL (HYD)',
+            name: 'Hydraulic Auxiliary Pumps (Aux 1 & Aux 2)',
+            expected: 'OFF',
+            note: 'Tekerlek takozları (Chocks) takılı olduğundan Aux Hydraulic Pump 1 ve 2\'yi OFF konumuna alın.'
+          }
+        ]
+      },
+      {
+        id: 'securing_cold_and_dark',
+        shortTitle: '14. SECURING (COLD & DARK)',
+        title: 'SECURING THE AIRCRAFT (BACK TO COLD & DARK)',
+        crew: 'CAPTAIN • FO • FLIGHT ENGINEER',
+        sysStatus: 'SECURING TO COLD & DARK',
+        desc: 'Uçağın tamamen kapatılarak terk edilmesi: aviyonikler, iklimlendirme, dış ışıklar, APU/Harici Güç ve son olarak Bataryanın kapatılarak tam Cold & Dark durumuna dönülmesi.',
+        items: [
+          {
+            id: 'sc_1',
+            station: 'PEDESTAL / AVIONICS',
+            name: 'CIVA INS / UNS-1 FMS / GNS 530 Mode Selector',
+            expected: 'OFF',
+            note: 'CIVA INS Mode Selector Unit (MSU) şalterini (veya FMS sistemini) OFF konumuna alın.'
+          },
+          {
+            id: 'sc_2',
+            station: 'OVERHEAD',
+            name: 'Master Radio Switch & Flight Recorder',
+            expected: 'OFF',
+            note: 'Master Radio şalterini ve Flight Recorder\'ı OFF konumuna getirin.'
+          },
+          {
+            id: 'sc_3',
+            station: 'OVERHEAD',
+            name: 'Emergency Exit Lights & Passenger Signs',
+            expected: 'OFF / DISARMED',
+            note: 'Emergency Exit Lights şalterinin koruma kapağını açıp OFF (Disarmed) konumuna alın; No Smoking şalterini OFF yapın.'
+          },
+          {
+            id: 'sc_4',
+            station: 'FE PANEL (PNEU)',
+            name: 'Air Conditioning Packs (L & R) & Gasper Fan',
+            expected: 'OFF',
+            note: 'Sol ve sağ Air Conditioning Pack şalterlerini ve Gasper Fan\'ı OFF konumuna alın.'
+          },
+          {
+            id: 'sc_5',
+            station: 'FE PANEL (PNEU)',
+            name: 'APU Bleed Air & Wing Isolation Valves',
+            expected: 'APU BLEED OFF / ISOLATION VALVES OPEN',
+            note: 'APU kapatılmadan önce pnömatik yükü kesmek için APU Bleed şalterini OFF konumuna alın.'
+          },
+          {
+            id: 'sc_6',
+            station: 'FE PANEL (APU / ELEC)',
+            name: 'APU Generator, APU Master & External Power',
+            expected: 'ALL OFF (WAIT FOR APU SPOOL DOWN)',
+            note: 'APU Generator\'ü ve APU Master şalterini (veya External Power\'ı) OFF yapın; APU devrinin düşüp Sync Bus\'tan ayrılmasını bekleyin.'
+          },
+          {
+            id: 'sc_7',
+            station: 'OVERHEAD',
+            name: 'Navigation (Position) Lights & Cockpit Dome/Panel Lights',
+            expected: 'ALL OFF',
+            note: 'Dış Position/Nav ışıklarını ve kokpit aydınlatmalarını kapatın.'
+          },
+          {
+            id: 'sc_8',
+            station: 'FE PANEL (UPPER)',
+            name: 'Battery Switch',
+            expected: 'OFF (AIRCRAFT COMPLETELY COLD & DARK)',
+            note: 'Son adım olarak FE üst elektrik panelindeki Battery Switch\'i OFF konumuna alın. Boeing 707-320C tamamen Cold & Dark durumuna getirilmiştir.'
+          }
+        ]
+      },
+      {
+        id: 'go_around',
+        shortTitle: '15. GO-AROUND (PAS GEÇME)',
+        title: 'MISSED APPROACH / GO-AROUND CHECKLIST',
+        crew: 'CAPTAIN (PF) • FO (PM) • FE',
+        sysStatus: 'MISSED APPROACH ACTIVE',
+        isEmergencyPhase: true,
+        desc: 'Pas geçme (Go-Around) manevrası, Go-Around EPR takati, Flap 25° toparlanma, pozitif tırmanışta iniş takımlarının çekilmesi ve 2. yaklaşma hazırlığı.',
+        items: [
+          {
+            id: 'ga_1',
+            station: 'GYROPILOT / PEDESTAL',
+            name: 'Autopilot Disengage & Thrust Levers → Go-Around EPR',
+            expected: 'AP OFF / SET GO-AROUND EPR (~1.79 - MAX T/O)',
+            note: 'Gyropilot\'u ayırın (B707\'de otomatik Go-Around yoktur), 4 gaz kolunu simetrik olarak Go-Around EPR böceğine ilerletin.'
+          },
+          {
+            id: 'ga_2',
+            station: 'CAPT / FO / PEDESTAL',
+            name: 'Pitch Attitude & Flaps Retract to 25°',
+            expected: 'ROTATE ~10°-12° NOSE UP / FLAPS 25°',
+            note: 'Yumuşakça 10°-12° burun yukarı tırmanış durumuna geçerken Flapları 50°/40°\'den derhal 25° konumuna çekin.'
+          },
+          {
+            id: 'ga_3',
+            station: 'CENTER PANEL',
+            name: 'Positive Rate of Climb → Landing Gear',
+            expected: 'UP (THEN OFF / NEUTRAL WHEN LIGHTS OUT)',
+            note: 'Varyometre pozitif tırmanışı gösterdiğinde iniş takımlarını UP yapın; ışıklar sönünce kolu OFF (Neutral) konumuna alın.'
+          },
+          {
+            id: 'ga_4',
+            station: 'CAPT / FO',
+            name: 'Airspeed & Lateral Navigation (> 400 FT AGL)',
+            expected: 'MAINTAIN MIN V2+10 / ENGAGE HDG OR VOR/LOC',
+            note: '400 ft üzerinde pas geçme rotasına göre Flight Director ve Gyropilot HDG veya VOR modunu devreye alın.'
+          },
+          {
+            id: 'ga_5',
+            station: 'PEDESTAL',
+            name: 'Acceleration Altitude → Flaps 14° → Flaps UP (0°)',
+            expected: '160+ KT FLAPS 14° → 180+ KT FLAPS UP (CLEAN)',
+            note: 'Hızlandıkça kademeli olarak önce Flaps 14°, ardından 180 KT üzerinde Flaps 0° (Clean) seçin.'
+          },
+          {
+            id: 'ga_6',
+            station: 'PEDESTAL / FE PANEL',
+            name: 'Climb Thrust (Climb EPR) & Pressurization / TC Check',
+            expected: 'CLIMB EPR SET / FE PRESSURIZATION & TC CHECKED',
+            note: 'Gaz kollarını Max Climb EPR değerine ayarlayın; FE kabin basınçlandırmasını ve Turbo Compressor durumunu kontrol eder.'
+          },
+          {
+            id: 'ga_7',
+            station: 'OVERHEAD',
+            name: 'Engine Start Switches (1 - 2 - 3 - 4)',
+            expected: 'AS REQUIRED (KEEP FLIGHT START IF ENTERING CIRCUIT)',
+            note: 'Meydan turuyla hemen 2. yaklaşmaya girilecekse FLIGHT START açık bırakılabilir; yüksek irtifaya tırmanılıyorsa OFF & Guarded yapılır.'
+          }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // BOEING 707-320C QRH / ABNORMAL & EMERGENCY PROCEDURES DATA
+    // =========================================================================
+    const qrhProcedures = [
+      {
+        id: 'eng_fire_damage',
+        title: 'ENG 1/2/3/4 FIRE OR SEVERE DAMAGE',
+        badge: 'MEMORY ITEMS • JT3D-3B',
+        desc: 'Motor yangını, aşırı hasar veya kopma durumunda Kaptan, FO ve Flight Engineer tarafından uygulanacak acil adımlar.',
+        steps: [
+          { action: 'Affected Thrust Lever (1, 2, 3 or 4)', value: 'CLOSE (IDLE)' },
+          { action: 'Affected Engine Start Lever', value: 'CUTOFF' },
+          { action: 'Affected Engine Fire Warning Handle (Center Glare)', value: 'PULL FULL OUT (Fuel, Hyd, Bleed & TC Isolated)' },
+          { action: 'Fire Warning Bell Cutout Pushbutton', value: 'PRESS' },
+          { action: 'Fire Handle Rotate (If Fire Light Remains On)', value: 'ROTATE LEFT (AGENT 1) — WAIT 30s — ROTATE RIGHT (AGENT 2)' },
+          { action: 'Essential Power Selector (If Engine #3 Affected)', value: 'SELECT GEN 2, GEN 4 OR GEN 1 (FE PANEL)' },
+          { action: 'Inboard Engine (#2 or #3) Failure', value: 'CHECK UTILITY HYD PRESS & REMAINING TURBO COMPRESSORS' },
+          { action: 'Fuel Crossfeed & Boost Pumps', value: 'OPEN CROSSFEED TO MAINTAIN LATERAL BALANCE' },
+          { action: 'Transponder & ATC Notification', value: 'MAYDAY / SQUAWK 7700 & LAND ASAP' }
+        ]
+      },
+      {
+        id: 'rapid_depress',
+        title: 'CABIN ALTITUDE / RAPID DEPRESSURIZATION',
+        badge: 'MEMORY ITEMS • PRESSURIZATION',
+        desc: 'Kabin irtifasının 10.000 ft / 14.000 ft sınırını aşması veya ani basınç kaybı ve acil alçalma (Emergency Descent) prosedürü.',
+        steps: [
+          { action: 'Crew Oxygen Masks & Regulators', value: 'ON / 100% / EMERGENCY' },
+          { action: 'Crew Interphone Communication', value: 'ESTABLISH' },
+          { action: 'Passenger Oxygen Switch (Overhead Panel)', value: 'ON (DROP CABIN MASKS)' },
+          { action: 'Fasten Seat Belt & No Smoking Signs', value: 'ON' },
+          { action: 'Engine Start Switches (1 - 2 - 3 - 4)', value: 'FLIGHT START (CONTINUOUS IGNITION)' },
+          { action: 'Thrust Levers (1 - 2 - 3 - 4)', value: 'CLOSE (IDLE)' },
+          { action: 'Speedbrake Lever', value: 'EXTEND FULL (60° DETENT)' },
+          { action: 'Emergency Descent Target Speed & Altitude', value: 'INITIATE DESCENT (Mmo 0.90 / Vmo 350-375 KIAS) TO 10,000 FT OR MEA' },
+          { action: 'FE Outflow Valves & Turbo Compressors', value: 'CHECK OUTFLOW CLOSED / VERIFY TC & BLEEDS' }
+        ]
+      },
+      {
+        id: 'gen_trip_elec',
+        title: 'GENERATOR TRIP / LOSS OF SYNC BUS',
+        badge: 'FE ELECTRICAL SYSTEM',
+        desc: 'Bir veya birden fazla jeneratörün (GCB) devreden çıkması, Essential Bus kaybı veya manuel yeniden paralel bağlama (Re-Sync).',
+        steps: [
+          { action: 'Essential Power Selector (FE Upper Panel)', value: 'SWITCH TO OPERATIVE GEN (GEN 3 → 2 → 4 → 1)' },
+          { action: 'CSD Oil Temp & Low Pressure Light', value: 'CHECK (DO NOT DISCONNECT CSD UNLESS OVERHEAT/FAIL)' },
+          { action: 'Generator Drive & Field Switch', value: 'VERIFY FIELD CLOSED' },
+          { action: 'Manual Re-Paralleling (Sync Bus)', value: 'SELECT GEN ON AC METER → ADJUST FREQ TO 400Hz (115V)' },
+          { action: 'Synchronizing Lights (Phase Check)', value: 'WAIT UNTIL SYNC LIGHTS FLASH SLOWLY / GO OUT → CLOSE GCB' },
+          { action: 'If Sync Bus Fault Persists', value: 'TRIP AFFECTED BUS TIE BREAKER (BTB) TO ISOLATE BUS' },
+          { action: 'Galley Power & Non-Essential Loads (If 2+ Gens Lost)', value: 'SHED (GALLEY POWER OFF)' }
+        ]
+      },
+      {
+        id: 'hyd_failure',
+        title: 'HYDRAULIC SYSTEM LOSS (UTILITY OR AUX)',
+        badge: 'FE HYDRAULICS & FLIGHT CONTROLS',
+        desc: 'Utility (Motor 2 & 3) veya Auxiliary hidrolik sistem kaybında Interconnect valfi, elektrikli yedek flap ve serbest düşüş iniş takımı prosedürü.',
+        steps: [
+          { action: 'Failed Hydraulic Pump Switch(es)', value: 'OFF' },
+          { action: 'Hydraulic Interconnect Valve (If Single System Without Leak)', value: 'OPEN AS REQUIRED TO PRESSURIZE UTILITY' },
+          { action: 'Flight Controls Assessment', value: 'AILERON & ELEVATOR ARE SERVO-TAB (UNAFFECTED) / CHECK RUDDER BOOST' },
+          { action: 'Flaps Extension (If Utility System Lost)', value: 'USE OVERHEAD ALTERNATE / EMERGENCY ELECTRIC FLAPS (INBD & OUTBD)' },
+          { action: 'Landing Gear Extension (If Utility System Lost)', value: 'GEAR LEVER DOWN + MANUAL FREE-FALL EXTENSION' },
+          { action: 'Braking & Spoiler Consideration', value: 'INBOARD/OUTBOARD SPOILERS SPLIT BY SYSTEM / PNEUMATIC AIR BRAKES READY' },
+          { action: 'Landing Distance Calculation', value: 'APPLY QRH LANDING DISTANCE FACTOR & FLAPS 40°/50° VREF' }
+        ]
+      },
+      {
+        id: 'fuel_dump',
+        title: 'EMERGENCY FUEL DUMPING PROCEDURE',
+        badge: 'FE HIDDEN FUEL DUMP PANEL',
+        desc: 'Maksimum İniş Ağırlığı (MLW: ~247,000 lbs) üzerinde acil geri dönüş gerektiğinde B707-320C yakıt boşaltma prosedürü.',
+        steps: [
+          { action: 'Aircraft Configuration & Airspeed', value: 'CLEAN (FLAPS UP / GEAR UP) — MIN 240 KIAS' },
+          { action: 'Weather Radar & HF Radio', value: 'WEATHER RADAR OFF / DO NOT TRANSMIT ON HF' },
+          { action: 'No Smoking & Fasten Seat Belt Signs', value: 'ON' },
+          { action: 'Fuel Dump Chute Switch (FE Lower Hidden Cover)', value: 'EXTEND (WAIT ~20 SEC UNTIL IN-TRANSIT LIGHT OUT)' },
+          { action: 'Fuel Dump Nozzle Valves (Left & Right)', value: 'OPEN' },
+          { action: 'Center & Main Tank Dump Valves', value: 'OPEN AS REQUIRED (STANDPIPES RETAIN ~2,500 LBS/MAIN TANK)' },
+          { action: 'When Target Landing Weight Reached', value: 'CLOSE ALL DUMP & NOZZLE VALVES → RETRACT DUMP CHUTE' }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // STATE MANAGEMENT & PERSISTENCE (localStorage)
+    // =========================================================================
+    const STORAGE_KEY_STATE = 'b707_checklist_state_v1';
+    const STORAGE_KEY_PHASE = 'b707_current_phase_v1';
+    const STORAGE_KEY_THEME = 'b707_theme_mode_v1';
+    const STORAGE_KEY_MUTED = 'b707_audio_muted_v1';
+
+    let checkedState = {};
+    let currentPhaseIndex = 0;
+    let isMuted = false;
+    let activeQrhId = qrhProcedures[0].id;
+    let audioCtx = null;
+
+    function safeGetStorage(key) {
+      try {
+        return window.localStorage.getItem(key);
+      } catch (_) {
+        return null;
+      }
+    }
+
+    function safeSetStorage(key, val) {
+      try {
+        window.localStorage.setItem(key, val);
+      } catch (_) {}
+    }
+
+    function loadSavedState() {
+      const rawState = safeGetStorage(STORAGE_KEY_STATE);
+      if (rawState) {
+        try { checkedState = JSON.parse(rawState); } catch (_) {}
+      }
+
+      const rawPhase = safeGetStorage(STORAGE_KEY_PHASE);
+      if (rawPhase !== null) {
+        const parsedIdx = parseInt(rawPhase, 10);
+        if (!isNaN(parsedIdx) && parsedIdx >= 0 && parsedIdx < checklistPhases.length) {
+          currentPhaseIndex = parsedIdx;
+        }
+      }
+
+      const rawMuted = safeGetStorage(STORAGE_KEY_MUTED);
+      if (rawMuted !== null) {
+        isMuted = rawMuted === 'true';
+      }
+
+      const savedTheme = safeGetStorage(STORAGE_KEY_THEME);
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+      updateThemeUI();
+      updateAudioUI();
+    }
+
+    function saveState() {
+      safeSetStorage(STORAGE_KEY_STATE, JSON.stringify(checkedState));
+      safeSetStorage(STORAGE_KEY_PHASE, String(currentPhaseIndex));
+    }
+
+    // =========================================================================
+    // WEB AUDIO API SOUND SYNTHESIS (COCKPIT AUDIO FEEDBACK)
+    // =========================================================================
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) audioCtx = new AudioContextClass();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTone(type) {
+      if (isMuted) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      if (type === 'check') {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, now);
+        osc.frequency.exponentialRampToValueAtTime(1320, now + 0.08);
+        gain.gain.setValueAtTime(0.12, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.12);
+      } else if (type === 'caution') {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(587.33, now);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'complete') {
+        [587.33, 880, 1174.66].forEach(freq => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now);
+          osc.stop(now + 0.45);
+        });
+      } else if (type === 'click') {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.05, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      }
+    }
+
+    // =========================================================================
+    // HELPER FUNCTIONS FOR PROGRESS & ACTIVE ITEM RESOLUTION
+    // =========================================================================
+    function getCheckableItems(phase) {
+      return phase.items.filter(item => item.type !== 'separator');
+    }
+
+    function getPhaseProgress(phase) {
+      const checkables = getCheckableItems(phase);
+      const completed = checkables.filter(item => !!checkedState[item.id]).length;
+      return { completed, total: checkables.length };
+    }
+
+    function getOverallProgress() {
+      // Standard 14 phases (exclude Go-Around from normal linear total)
+      const normalPhases = checklistPhases.filter(p => !p.isEmergencyPhase);
+      let completed = 0;
+      let total = 0;
+      normalPhases.forEach(p => {
+        const prog = getPhaseProgress(p);
+        completed += prog.completed;
+        total += prog.total;
+      });
+      const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+      return { completed, total, pct };
+    }
+
+    function getFirstUncheckedItem(phase) {
+      const checkables = getCheckableItems(phase);
+      return checkables.find(item => !checkedState[item.id]) || null;
+    }
+
+    // =========================================================================
+    // UI RENDERERS
+    // =========================================================================
+    function renderSidebar() {
+      const container = document.getElementById('phase-sidebar-list');
+      container.innerHTML = '';
+
+      checklistPhases.forEach((phase, index) => {
+        const { completed, total } = getPhaseProgress(phase);
+        const isDone = completed === total && total > 0;
+        const isActive = index === currentPhaseIndex;
+        const isGoAround = !!phase.isEmergencyPhase;
+
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.dataset.phaseIndex = index;
+
+        let baseClasses = 'w-full text-left px-3 py-2.5 rounded-xl border transition-all duration-150 flex items-center justify-between gap-2 ';
+        if (isActive) {
+          if (isGoAround) {
+            baseClasses += 'bg-amber-500/15 border-amber-500 text-amber-600 dark:text-amber-300 shadow-sm font-bold';
+          } else {
+            baseClasses += 'bg-thy-red/10 dark:bg-thy-red/20 border-thy-red text-slate-900 dark:text-white shadow-sm font-bold';
+          }
+        } else if (isDone) {
+          baseClasses += 'bg-emerald-500/5 dark:bg-emerald-950/20 border-emerald-500/30 text-slate-700 dark:text-slate-300 hover:bg-emerald-500/10';
+        } else if (isGoAround) {
+          baseClasses += 'bg-amber-500/5 border-amber-500/30 text-amber-700 dark:text-amber-400 hover:bg-amber-500/10';
+        } else {
+          baseClasses += 'bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800/80 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60';
+        }
+        btn.className = baseClasses;
+
+        // Number / Status Circle
+        let circleClasses = 'w-6 h-6 rounded-full flex items-center justify-center text-[11px] font-mono font-bold shrink-0 ';
+        let circleContent = String(index + 1);
+        if (isDone) {
+          circleClasses += 'bg-emerald-500 text-slate-950';
+          circleContent = '<i class="fa-solid fa-check text-[10px]"></i>';
+        } else if (isActive) {
+          circleClasses += isGoAround ? 'bg-amber-500 text-slate-950' : 'bg-thy-red text-white';
+        } else if (isGoAround) {
+          circleClasses += 'bg-amber-500/20 text-amber-500';
+          circleContent = '<i class="fa-solid fa-rotate-right text-[10px]"></i>';
+        } else {
+          circleClasses += 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400';
+        }
+
+        // Counter Badge
+        let badgeClasses = 'text-[10px] font-mono font-bold px-2 py-0.5 rounded-full shrink-0 ';
+        if (isDone) {
+          badgeClasses += 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30';
+        } else if (completed > 0) {
+          badgeClasses += 'bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30';
+        } else {
+          badgeClasses += 'bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400';
+        }
+
+        const labelClean = phase.shortTitle.replace(/^\d+\.\s*/, '');
+
+        btn.innerHTML = `
+          <div class="flex items-center space-x-2.5 min-w-0">
+            <div class="${circleClasses}">${circleContent}</div>
+            <span class="text-xs font-mono truncate">${labelClean}</span>
+          </div>
+          <span class="${badgeClasses}">${completed}/${total}</span>
+        `;
+
+        btn.addEventListener('click', () => {
+          playTone('click');
+          currentPhaseIndex = index;
+          saveState();
+          renderAll();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        container.appendChild(btn);
+      });
+    }
+
+    function renderActivePhase() {
+      const phase = checklistPhases[currentPhaseIndex];
+      const { completed, total } = getPhaseProgress(phase);
+      const overall = getOverallProgress();
+      const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+      const isPhaseDone = completed === total && total > 0;
+      const activeItem = getFirstUncheckedItem(phase);
+      const isGoAround = !!phase.isEmergencyPhase;
+
+      // Update Top Status Bar
+      document.getElementById('status-bar-phase-name').textContent = phase.shortTitle + ' — ' + phase.title;
+      document.getElementById('status-bar-sys-badge').innerHTML = `
+        <span class="w-1.5 h-1.5 rounded-full ${isGoAround ? 'bg-amber-500' : 'bg-emerald-500'} mr-1.5"></span>
+        ${phase.sysStatus}
+      `;
+      document.getElementById('status-bar-counter').textContent = `${completed} / ${total} COMPLETED`;
+      document.getElementById('total-flight-progress').textContent = `(TÜM UÇUŞ: %${overall.pct})`;
+      document.getElementById('status-bar-progress').style.width = `${pct}%`;
+
+      // Update Phase Header Card
+      const totalNormalPhases = checklistPhases.filter(p => !p.isEmergencyPhase).length;
+      const phaseBadgeEl = document.getElementById('active-phase-badge');
+      if (isGoAround) {
+        phaseBadgeEl.textContent = 'EMERGENCY / GO-AROUND PHASE';
+        phaseBadgeEl.className = 'text-[11px] font-mono font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 px-2.5 py-0.5 rounded-md border border-amber-500/30';
+      } else {
+        phaseBadgeEl.textContent = `PHASE ${currentPhaseIndex + 1} / ${totalNormalPhases}`;
+        phaseBadgeEl.className = 'text-[11px] font-mono font-bold bg-cyan-500/10 text-cyan-600 dark:text-efb-cyan px-2.5 py-0.5 rounded-md border border-cyan-500/20';
+      }
+
+      document.getElementById('active-phase-crew').textContent = phase.crew;
+      document.getElementById('active-phase-title').textContent = phase.title;
+      document.getElementById('active-phase-desc').textContent = phase.desc;
+
+      // Update Top-Right Check Button state
+      const btnCheckActive = document.getElementById('btn-check-active');
+      if (isPhaseDone) {
+        if (currentPhaseIndex < totalNormalPhases - 1) {
+          btnCheckActive.innerHTML = `
+            <i class="fa-solid fa-forward-step"></i>
+            <span>SONRAKİ FAZ</span>
+            <kbd class="bg-slate-950/20 text-slate-950 text-[10px] px-1.5 py-0.5 rounded font-mono">SPACE</kbd>
+          `;
+        } else {
+          btnCheckActive.innerHTML = `
+            <i class="fa-solid fa-check-double"></i>
+            <span>TAMAMLANDI</span>
+          `;
+        }
+      } else {
+        btnCheckActive.innerHTML = `
+          <i class="fa-solid fa-check-double"></i>
+          <span>OK / CHECK</span>
+          <kbd class="bg-slate-950/20 text-slate-950 text-[10px] px-1.5 py-0.5 rounded font-mono">SPACE</kbd>
+        `;
+      }
+
+      // Update Phase Complete Banner
+      const completeBanner = document.getElementById('phase-complete-banner');
+      const btnNextPhase = document.getElementById('btn-next-phase');
+      const btnProceed2ndApp = document.getElementById('btn-proceed-2nd-approach');
+
+      if (isPhaseDone) {
+        completeBanner.classList.remove('hidden');
+        document.getElementById('phase-complete-title').textContent = `${phase.title} TAMAMLANDI!`;
+
+        if (isGoAround) {
+          btnProceed2ndApp.classList.remove('hidden');
+          btnNextPhase.classList.add('hidden');
+        } else {
+          btnProceed2ndApp.classList.add('hidden');
+          if (currentPhaseIndex < totalNormalPhases - 1) {
+            btnNextPhase.classList.remove('hidden');
+          } else {
+            btnNextPhase.classList.add('hidden');
+          }
+        }
+      } else {
+        completeBanner.classList.add('hidden');
+      }
+
+      // Render Checklist Items
+      const itemsContainer = document.getElementById('checklist-items-container');
+      itemsContainer.innerHTML = '';
+
+      let itemNumber = 0;
+      phase.items.forEach(item => {
+        if (item.type === 'separator') {
+          const sep = document.createElement('div');
+          sep.className = 'my-3 sm:my-4 p-3 rounded-xl border border-amber-500/40 below-line-stripe flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left';
+          sep.innerHTML = `
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-grip-lines text-amber-500"></i>
+              <span class="font-mono font-bold text-xs tracking-wider uppercase text-amber-600 dark:text-amber-400">BELOW THE LINE</span>
+            </div>
+            <span class="text-[11px] font-mono text-slate-700 dark:text-amber-200/90 bg-amber-500/10 px-2.5 py-0.5 rounded border border-amber-500/20">${item.condition}</span>
+          `;
+          itemsContainer.appendChild(sep);
+          return;
+        }
+
+        itemNumber += 1;
+        const isChecked = !!checkedState[item.id];
+        const isCurrentActive = activeItem && activeItem.id === item.id;
+
+        const card = document.createElement('div');
+        card.id = `item-card-${item.id}`;
+        card.dataset.itemId = item.id;
+
+        let cardClasses = 'rounded-2xl p-3 sm:p-4 border transition-all duration-200 cursor-pointer flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 sm:gap-4 ';
+        if (isChecked) {
+          cardClasses += 'border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-950/15 opacity-90';
+        } else if (isCurrentActive) {
+          if (isGoAround) {
+            cardClasses += 'border-amber-500 dark:border-amber-400 bg-amber-500/10 dark:bg-amber-950/30 active-amber-glow shadow-md';
+          } else {
+            cardClasses += 'border-emerald-500 dark:border-emerald-400 bg-emerald-500/10 dark:bg-emerald-950/30 active-item-glow shadow-md';
+          }
+        } else {
+          cardClasses += 'border-slate-200 dark:border-slate-800 bg-white dark:bg-thy-nightCard hover:border-slate-300 dark:hover:border-slate-700';
+        }
+        card.className = cardClasses;
+
+        // Left Indicator (Checkmark or Item Index)
+        let indicatorHTML = '';
+        if (isChecked) {
+          indicatorHTML = `<div class="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs shadow-sm shrink-0"><i class="fa-solid fa-check"></i></div>`;
+        } else if (isCurrentActive) {
+          indicatorHTML = `<div class="w-7 h-7 rounded-full ${isGoAround ? 'bg-amber-500 text-slate-950' : 'bg-emerald-500 text-slate-950'} flex items-center justify-center text-xs font-mono font-extrabold shadow-sm shrink-0">${itemNumber}</div>`;
+        } else {
+          indicatorHTML = `<div class="w-7 h-7 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 flex items-center justify-center text-xs font-mono font-bold shrink-0">${itemNumber}</div>`;
+        }
+
+        // Active Badge ("SIRADAKİ")
+        const activeBadgeHTML = isCurrentActive
+          ? `<span class="${isGoAround ? 'bg-amber-500 text-slate-950' : 'bg-emerald-500 text-white dark:bg-emerald-400 dark:text-slate-950'} text-[10px] font-mono px-2 py-0.5 rounded font-black tracking-wider animate-pulse">SIRADAKİ</span>`
+          : '';
+
+        // Station Badge Color
+        let stationColor = 'bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-300 dark:border-slate-700';
+        if (item.station.includes('FE PANEL')) {
+          stationColor = 'bg-amber-500/10 text-amber-600 dark:text-amber-300 border-amber-500/30';
+        } else if (item.station.includes('OVERHEAD')) {
+          stationColor = 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-300 border-cyan-500/30';
+        } else if (item.station.includes('GYROPILOT') || item.station.includes('INS') || item.station.includes('AVIONICS')) {
+          stationColor = 'bg-purple-500/10 text-purple-600 dark:text-purple-300 border-purple-500/30';
+        }
+
+        // Expected Value Styling
+        const expectedClasses = isChecked
+          ? 'text-xs sm:text-sm font-mono font-extrabold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/30 text-right shrink-0'
+          : isCurrentActive
+          ? 'text-xs sm:text-sm font-mono font-extrabold text-cyan-700 dark:text-efb-cyan bg-cyan-500/10 px-3 py-1.5 rounded-lg border border-cyan-500/30 text-right shrink-0'
+          : 'text-xs sm:text-sm font-mono font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/90 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 text-right shrink-0';
+
+        card.innerHTML = `
+          <div class="flex items-start space-x-3 min-w-0 flex-1">
+            ${indicatorHTML}
+            <div class="space-y-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-1.5">
+                <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded border ${stationColor}">${item.station}</span>
+                ${activeBadgeHTML}
+              </div>
+              <div class="font-semibold text-sm sm:text-base ${isChecked ? 'line-through text-slate-400 dark:text-slate-500' : 'text-slate-900 dark:text-white'}">
+                ${item.name}
+              </div>
+              ${item.note ? `<p class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-relaxed">${item.note}</p>` : ''}
+            </div>
+          </div>
+          <div class="flex items-center justify-end sm:pl-2">
+            <span class="${expectedClasses}">${item.expected}</span>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          toggleChecklistItem(item.id);
+        });
+
+        itemsContainer.appendChild(card);
+      });
+    }
+
+    function renderQrhModal() {
+      const tabsContainer = document.getElementById('qrh-tabs');
+      const contentContainer = document.getElementById('qrh-content');
+      tabsContainer.innerHTML = '';
+      contentContainer.innerHTML = '';
+
+      qrhProcedures.forEach(proc => {
+        const isSelected = proc.id === activeQrhId;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.dataset.failure = proc.id;
+        btn.className = isSelected
+          ? 'text-xs font-mono font-bold px-3 py-1.5 rounded-lg bg-red-600 text-white shadow-sm transition-all'
+          : 'text-xs font-mono font-semibold px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-red-500/20 transition-all';
+        btn.textContent = proc.title;
+        btn.addEventListener('click', () => {
+          playTone('click');
+          activeQrhId = proc.id;
+          renderQrhModal();
+        });
+        tabsContainer.appendChild(btn);
+      });
+
+      const currentProc = qrhProcedures.find(p => p.id === activeQrhId) || qrhProcedures[0];
+
+      const headerBox = document.createElement('div');
+      headerBox.className = 'p-3.5 rounded-xl bg-red-500/10 border border-red-500/30 mb-3';
+      headerBox.innerHTML = `
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <h3 class="font-display font-bold text-sm sm:text-base text-red-600 dark:text-red-400">${currentProc.title}</h3>
+          <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-600 dark:text-red-300 border border-red-500/30">${currentProc.badge}</span>
+        </div>
+        <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">${currentProc.desc}</p>
+      `;
+      contentContainer.appendChild(headerBox);
+
+      currentProc.steps.forEach((step, idx) => {
+        const row = document.createElement('div');
+        row.className = 'p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2';
+        row.innerHTML = `
+          <div class="flex items-center space-x-2.5">
+            <span class="w-6 h-6 rounded-full bg-red-500/20 text-red-600 dark:text-red-400 font-mono font-bold text-xs flex items-center justify-center shrink-0">${idx + 1}</span>
+            <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">${step.action}</span>
+          </div>
+          <span class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20 text-right">${step.value}</span>
+        `;
+        contentContainer.appendChild(row);
+      });
+    }
+
+    function renderAll() {
+      renderSidebar();
+      renderActivePhase();
+    }
+
+    // =========================================================================
+    // INTERACTIVE HANDLERS
+    // =========================================================================
+    function toggleChecklistItem(itemId) {
+      const phase = checklistPhases[currentPhaseIndex];
+      const wasDone = getPhaseProgress(phase).completed === getPhaseProgress(phase).total;
+
+      checkedState[itemId] = !checkedState[itemId];
+      saveState();
+
+      const nowProg = getPhaseProgress(phase);
+      const isNowDone = nowProg.completed === nowProg.total && nowProg.total > 0;
+
+      if (isNowDone && !wasDone) {
+        playTone('complete');
+      } else if (checkedState[itemId]) {
+        playTone('check');
+      } else {
+        playTone('click');
+      }
+
+      renderAll();
+
+      // Auto-scroll smoothly to next active item, or back to top when phase completes
+      const nextActive = getFirstUncheckedItem(phase);
+      if (nextActive) {
+        const nextEl = document.getElementById(`item-card-${nextActive.id}`);
+        if (nextEl) {
+          const rect = nextEl.getBoundingClientRect();
+          if (rect.bottom > window.innerHeight - 80 || rect.top < 120) {
+            nextEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      } else if (isNowDone && !wasDone) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
+    }
+
+    function confirmCurrentActiveItem() {
+      const phase = checklistPhases[currentPhaseIndex];
+      const activeItem = getFirstUncheckedItem(phase);
+
+      if (activeItem) {
+        toggleChecklistItem(activeItem.id);
+      } else {
+        // Phase already complete -> advance to next normal phase
+        const totalNormalPhases = checklistPhases.filter(p => !p.isEmergencyPhase).length;
+        if (!phase.isEmergencyPhase && currentPhaseIndex < totalNormalPhases - 1) {
+          playTone('click');
+          currentPhaseIndex += 1;
+          saveState();
+          renderAll();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }
+
+    function updateThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.className = isDark ? 'fa-solid fa-sun text-amber-400' : 'fa-solid fa-moon text-slate-700';
+      }
+    }
+
+    function updateAudioUI() {
+      const icon = document.getElementById('audio-icon');
+      const btn = document.getElementById('btn-audio-toggle');
+      if (!icon || !btn) return;
+      if (isMuted) {
+        icon.className = 'fa-solid fa-volume-xmark';
+        btn.classList.remove('text-emerald-600', 'dark:text-emerald-400');
+        btn.classList.add('text-slate-400');
+      } else {
+        icon.className = 'fa-solid fa-volume-high';
+        btn.classList.add('text-emerald-600', 'dark:text-emerald-400');
+        btn.classList.remove('text-slate-400');
+      }
+    }
+
+    // =========================================================================
+    // EVENT LISTENERS INITIALIZATION
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      loadSavedState();
+      renderAll();
+      renderQrhModal();
+
+      // OK / CHECK Button
+      document.getElementById('btn-check-active').addEventListener('click', () => {
+        confirmCurrentActiveItem();
+      });
+
+      // Next Phase Button
+      document.getElementById('btn-next-phase').addEventListener('click', () => {
+        const totalNormalPhases = checklistPhases.filter(p => !p.isEmergencyPhase).length;
+        if (currentPhaseIndex < totalNormalPhases - 1) {
+          playTone('click');
+          currentPhaseIndex += 1;
+          saveState();
+          renderAll();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // Proceed to 2nd Approach Button (from Go-Around)
+      document.getElementById('btn-proceed-2nd-approach').addEventListener('click', () => {
+        playTone('caution');
+        const descAppIdx = checklistPhases.findIndex(p => p.id === 'before_descent_approach');
+        const landIdx = checklistPhases.findIndex(p => p.id === 'landing');
+        const goAroundIdx = checklistPhases.findIndex(p => p.id === 'go_around');
+
+        [descAppIdx, landIdx, goAroundIdx].forEach(idx => {
+          if (idx !== -1) {
+            checklistPhases[idx].items.forEach(item => {
+              if (item.id) delete checkedState[item.id];
+            });
+          }
+        });
+
+        currentPhaseIndex = descAppIdx !== -1 ? descAppIdx : 9;
+        saveState();
+        renderAll();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Reset Current Phase Button
+      document.getElementById('btn-reset-phase').addEventListener('click', () => {
+        playTone('click');
+        const phase = checklistPhases[currentPhaseIndex];
+        phase.items.forEach(item => {
+          if (item.id) delete checkedState[item.id];
+        });
+        saveState();
+        renderAll();
+      });
+
+      // Reset All Phases Button
+      document.getElementById('btn-reset-all').addEventListener('click', () => {
+        playTone('caution');
+        checkedState = {};
+        currentPhaseIndex = 0;
+        saveState();
+        renderAll();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Go-Around Top Button
+      document.getElementById('btn-go-around-top').addEventListener('click', () => {
+        playTone('caution');
+        const gaIndex = checklistPhases.findIndex(p => p.id === 'go_around');
+        if (gaIndex !== -1) {
+          currentPhaseIndex = gaIndex;
+          saveState();
+          renderAll();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+
+      // QRH / Failures Modal Open & Close
+      const failuresModal = document.getElementById('failures-modal');
+      document.getElementById('btn-failures-modal').addEventListener('click', () => {
+        playTone('caution');
+        renderQrhModal();
+        failuresModal.classList.remove('hidden');
+      });
+      document.getElementById('close-failures-btn').addEventListener('click', () => {
+        failuresModal.classList.add('hidden');
+      });
+      document.getElementById('btn-resume-normal').addEventListener('click', () => {
+        playTone('click');
+        failuresModal.classList.add('hidden');
+      });
+
+      // Install / Fullscreen Guide Modal Open & Close
+      const installModal = document.getElementById('install-modal');
+      document.getElementById('btn-pwa-install').addEventListener('click', () => {
+        playTone('click');
+        installModal.classList.remove('hidden');
+      });
+      document.getElementById('banner-action-btn').addEventListener('click', () => {
+        playTone('click');
+        installModal.classList.remove('hidden');
+      });
+      document.getElementById('close-modal-btn').addEventListener('click', () => {
+        installModal.classList.add('hidden');
+      });
+      document.getElementById('btn-modal-dismiss').addEventListener('click', () => {
+        installModal.classList.add('hidden');
+      });
+      document.getElementById('banner-close-btn').addEventListener('click', () => {
+        document.getElementById('pwa-banner').classList.add('hidden');
+      });
+
+      // Fullscreen Toggle
+      function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+          document.exitFullscreen().catch(() => {});
+        }
+      }
+      document.getElementById('btn-fullscreen-toggle').addEventListener('click', toggleFullscreen);
+      document.getElementById('btn-modal-force-fullscreen').addEventListener('click', () => {
+        toggleFullscreen();
+        installModal.classList.add('hidden');
+      });
+      document.addEventListener('fullscreenchange', () => {
+        const icon = document.getElementById('fullscreen-icon');
+        const badge = document.getElementById('app-mode-badge');
+        if (document.fullscreenElement) {
+          icon.className = 'fa-solid fa-compress';
+          badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span>TAM EKRAN EFB`;
+        } else {
+          icon.className = 'fa-solid fa-expand';
+          badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-amber-400 mr-1.5 animate-pulse"></span>TARAYICI MODU`;
+        }
+      });
+
+      // Audio Mute/Unmute Toggle
+      document.getElementById('btn-audio-toggle').addEventListener('click', () => {
+        isMuted = !isMuted;
+        safeSetStorage(STORAGE_KEY_MUTED, String(isMuted));
+        updateAudioUI();
+        if (!isMuted) playTone('check');
+      });
+
+      // Theme Toggle
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        safeSetStorage(STORAGE_KEY_THEME, isDark ? 'dark' : 'light');
+        updateThemeUI();
+        playTone('click');
+      });
+
+      // Keyboard Shortcuts (SPACE / ENTER / ESC)
+      window.addEventListener('keydown', e => {
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.key === 'Escape') {
+          failuresModal.classList.add('hidden');
+          installModal.classList.add('hidden');
+          return;
+        }
+        if (!failuresModal.classList.contains('hidden') || !installModal.classList.contains('hidden')) {
+          return;
+        }
+        if (e.code === 'Space' || e.key === ' ' || e.code === 'Enter') {
+          e.preventDefault();
+          confirmCurrentActiveItem();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+boeing_707_320c_checklist.html
+Displaying boeing_707_320c_checklist.html.
